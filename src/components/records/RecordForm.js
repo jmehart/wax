@@ -31,11 +31,11 @@ export const RecordForm = () => {
         const newForm = {
             album: form.album,
             artist: form.artist,
-            genreId: form.genre,
+            genreId: form.genreId,
             value: form.value,
-            releaseDate: form.date,
-            catalogNumber: form.number,
-            albumCover: form.cover,
+            releaseDate: form.releaseDate,
+            catalogNumber: form.catalogNumber,
+            albumCover: form.albumCover,
             rating: form.rating
         }
         const fetchOption = {
@@ -91,12 +91,12 @@ export const RecordForm = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="catalogNum">Catalog #</label>
+                        <label htmlFor="catalogNumber">Catalog #</label>
                         <input
                             onChange={
                                 (evt) => {
                                     const copy = { ...form }
-                                    copy.catalogNum = evt.target.value
+                                    copy.catalogNumber = evt.target.value
                                     updateForm(copy)
                                 }
                             }
@@ -139,7 +139,7 @@ export const RecordForm = () => {
                         <select onChange={
                             (evt) => {
                                 const copy = { ...form }
-                                copy.genre = parseInt(evt.target.value)
+                                copy.genreId = parseInt(evt.target.value)
                                 updateForm(copy)
                             }
                         }>

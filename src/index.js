@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import { Wax } from "./components/Wax";
+//importing third party library to do routing for navbar and app
+import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <Wax />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

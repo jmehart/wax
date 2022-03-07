@@ -20,6 +20,8 @@ export const RecordForm = () => {
         albumCover: "",
         rating: ""
     });
+
+    //create destination state variable to allow radio button selection to route to different pages
     const [destination, updateDestination] = useState ("")
 
     //ACCESS GENRE ARRAY STATE TO HAVE DROPDOWN FOR ALL GENRES
@@ -39,6 +41,7 @@ export const RecordForm = () => {
     const saveForm = (event) => {
         event.preventDefault()
 
+        //create new object based on form input
         const newForm = {
             album: form.album,
             artist: form.artist,
@@ -59,6 +62,7 @@ export const RecordForm = () => {
         return fetch("http://localhost:8088/records", fetchOption)
             .then(response => response.json())
             .then(() => {
+                //conditional to update destination state variable to route to certain pages
                 if (destination === "crate") {
                     history.push("/crate")
                 } else if (destination === "collection") {
@@ -69,6 +73,10 @@ export const RecordForm = () => {
 
     }
 
+    //RETURN HTML FOR FORM
+    //INCLUDE INPUT FIELDS, RADIO BUTTONS, AND DROPDOWN
+    //RADIO BUTTONS HAVE DIFFERENT DESTINATION NAMES IN ORDER TO ROUTE CORRECTLY
+    //INCLUDE SAVE FORM BUTTON
     return (
         <div className="recordFormParent">
             <form className="recordForm">

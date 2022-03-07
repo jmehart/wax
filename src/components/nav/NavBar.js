@@ -7,7 +7,7 @@ import "./NavBar.css"
 //at attribute "to=" it will render a hyperlink in your DOM, and when clicked, it will change the URL in the browser to the value of the to attribute
 //"to=" matches "path" in ApplicationViews file
 //logout Link includes click event to remove the honey_customer from localStorage in order to remove authentication and go back to login
-    //Repairs.js shows this re-render when local storage doesn't have the authentication we need
+    //Wax.js shows this re-render when local storage doesn't have the authentication we need
 export const NavBar = (props) => {
     return (
         <ul className="navbar">

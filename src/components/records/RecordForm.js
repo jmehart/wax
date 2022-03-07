@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom"
+/*
+THIS MODULE IS RESPONSIBLE FOR THE RECORD INPUT FORM
+USERS CAN MANUALLY ENTER RECORD INFO TO EITHER ADD TO CRATE OR COLLECTION
+ADDS RECORD TO RECORDS ARRAY IN API AND SHOULD ALSO ADD TO CRATE OR COLLECTION ARRAY AND MATCH CURRENT USER
+*/
 
+//EXPORT A RECORDFORM FUNCTION TO ROUTE IN WAX.JS
 export const RecordForm = () => {
+    //DEFINE FORM STATE TO ALTER/UPDATE
+    //INIATIATE OBJECT PROPERTIES FOR ADDING TO API WHEN FORM SUBMITTED
     const [form, updateForm] = useState({
         album: "",
         artist: "",
@@ -12,9 +20,12 @@ export const RecordForm = () => {
         albumCover: "",
         rating: ""
     });
+    const [destination, updateDestination] = useState ("")
 
+    //ACCESS GENRE ARRAY STATE TO HAVE DROPDOWN FOR ALL GENRES
     const [genreChoices, setGenreChoice] = useState([]);
 
+    //FETCH CALL TO ACCESS GENRES AND SET A GENRE CHOISE
     useEffect(() => {
         fetch("http://localhost:8088/genres")
             .then((res) => res.json())
@@ -24,7 +35,7 @@ export const RecordForm = () => {
     }, []);
 
     const history = useHistory()
-
+    //EVENT HANDLER TO SAVE THE FORM VALUES AS NEW OBJECT
     const saveForm = (event) => {
         event.preventDefault()
 
@@ -44,11 +55,16 @@ export const RecordForm = () => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(newForm)
-        }
+        } //FETCH RECORDS FROM API
         return fetch("http://localhost:8088/records", fetchOption)
             .then(response => response.json())
             .then(() => {
-                history.push("/records")
+                if (destination === "crate") {
+                    history.push("/crate")
+                } else if (destination === "collection") {
+                    history.push("/collection")
+                }
+                
             })
 
     }
@@ -112,11 +128,10 @@ export const RecordForm = () => {
                         <label htmlFor="addCrate">Add to Crate</label>
                         <input type="radio"
                             name="addRadio"
+                            value="crate"
                             onChange={
                                 (evt) => {
-                                    const copy = { ...form }
-                                    copy.addCrate = evt.target.checked
-                                    updateForm(copy)
+                                    updateDestination("crate")
                                 }
                             } />
                     </div>
@@ -126,9 +141,7 @@ export const RecordForm = () => {
                             name="addRadio"
                             onChange={
                                 (evt) => {
-                                    const copy = { ...form }
-                                    copy.addCollection = evt.target.checked
-                                    updateForm(copy)
+                                    updateDestination("collection")
                                 }
                             } />
                     </div>

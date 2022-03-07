@@ -4,30 +4,47 @@ import { useHistory } from "react-router-dom"
 import { checkUserEmail } from "../APIManager";
 import "./Login.css"
 
+/*
+THIS MODULE IS RESPONSIBLE FOR LOGGING IN AN EXISTING USER
+IT CHECKS THE WAX_USER TOKEN TO AUTHENTICATE A USER AND RENDERS THE HOME PAGE IF USER EXISTS IN API
+*/
+
+//EXPORT A LOGIN FUNCTION TO ROUTE IN WAX.JS
 export const Login = () => {
     const [email, set] = useState("")
     const existDialog = useRef()
     const history = useHistory()
 
+    //CHECK IF THERE'S ALREADY AN EXISTING USER
     const existingUserCheck = () => {
+        //USE FETCH FROM APIMANAGER.JS
         return checkUserEmail(email)
             .then(user => user.length ? user[0] : false)
     }
 
+    //LOGIN EVENT LISTENER
     const handleLogin = (e) => {
         e.preventDefault()
+        //INVOKE THE EXISTINGUSERCHECK FUNCTION FIRST TO CHECK IF USER EXISTS
         existingUserCheck()
             .then(exists => {
                 if (exists) {
-                    //store new user in local storage with primary key
+                    //IF USER EXISTS - store new user in local storage with primary key AND LOGIN TO HOME PAGE
                     localStorage.setItem("wax_user", exists.id)
                     history.push("/")
                 } else {
+                    //IF USER DOESN'T EXIST - DISPLAY POP UP 
                     existDialog.current.showModal()
                 }
             })
     }
 
+    //RENDER HTML FOR LOGIN FORM
+    //STARTS WITH MODAL POP UP INFO
+    //THEN SIGN IN SECTION
+    //INCLUDE INPUTS FOR EMAIL - ADD PASSWORD AND ENCRIPTION LATER
+    //ADD SIGN IN BUTTON
+    //INCLUDE LINK TO REGISTER IF NOT A USER YET - LINKS TO /REGISTER PAGE
     return (
         <main className="container--login">
             <dialog className="dialog dialog--auth" ref={existDialog}>

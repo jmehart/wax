@@ -18,6 +18,7 @@ export const existingUserInfo = (user) => {
             .then(res => res.json())
 }
 
+
 export const sendNewUser = (user) => {
    return fetch("http://localhost:8088/users", {
                         method: "POST",

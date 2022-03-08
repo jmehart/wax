@@ -14,6 +14,12 @@ export const NavBar = (props) => {
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/home">Home</Link>
             </li>
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/crate">Crate</Link>
+            </li>
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/collection">Collection</Link>
+            </li>
             <li className="navbar__item">
                 <Link className="navbar__link" to="#"
                     onClick={

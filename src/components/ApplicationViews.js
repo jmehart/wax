@@ -1,5 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import { CollectionList } from "./collection/CollectionList"
+import { CrateList } from "./crate/CrateList"
 import { HomePage } from "./home/HomePage"
 
 
@@ -11,6 +13,12 @@ export const ApplicationViews = () => {
         <>
             <Route exact path="/home">
                 <HomePage />
+            </Route>
+            <Route exact path="/crate">
+                <CrateList />
+            </Route>
+            <Route exact path="/collection">
+                <CollectionList />
             </Route>
         </>
     )

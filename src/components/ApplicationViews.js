@@ -11,7 +11,7 @@ import { HomePage } from "./home/HomePage"
 export const ApplicationViews = () => {
     return (
         <>
-            <Route exact path="/home">
+            <Route exact path="/">
                 <HomePage />
             </Route>
             <Route exact path="/crate">

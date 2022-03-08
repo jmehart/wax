@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { useHistory } from "react-router-dom"
 import "./Crate.css"
 
 export const CrateList = () => {
@@ -28,7 +29,16 @@ export const CrateList = () => {
     )
 
 
+    const history = useHistory()
 
+    const deleteRecordInCrate = (id) => {
+        fetch(`http://localhost:8088/crate/${id}`, {
+            method: "DELETE"
+        })
+            .then(() => {
+                history.go("/crate")
+            })
+    }
 
 
     return (
@@ -48,6 +58,13 @@ export const CrateList = () => {
                                 <p>{crateObject.record.artist}</p>
                                 <img className="cover" src={crateObject.record.albumCover} />
                                 </li>
+                                <div>
+                                        <button className="btn-crate" 
+                                        onClick={
+                                            (event) => { 
+                                                event.preventDefault()
+                                                deleteRecordInCrate(crateObject.id) }}>Remove Record</button>
+                                    </div>
                                 </ul>
 
                                 

@@ -84,11 +84,11 @@ export const RecordForm = () => {
             .then(() => {
                 //conditional to update destination state variable to route to certain pages
                 if (destination === "crate") {
-                    history.push("/crate")
+                    history.go("/")
                     return fetch("http://localhost:8088/crate", fetchCrateCollect)
                         .then(response => response.json())
                 } else if (destination === "collection") {
-                    history.push("/collection")
+                    history.go("/")
                     return fetch("http://localhost:8088/collection", fetchCrateCollect)
                         .then(response => response.json())
                 }

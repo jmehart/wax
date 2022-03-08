@@ -20,7 +20,6 @@ export const Wax = () => (
         if (localStorage.getItem("wax_user")) {
           return (
             <>
-              <Redirect to="/home" /> 
               <NavBar />
               <ApplicationViews />
             </>

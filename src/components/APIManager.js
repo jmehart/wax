@@ -9,12 +9,12 @@ export const getAllUsers= () => {
 }
 
 export const checkUserEmail = (email) => {
-    return fetch(`http://localhost:8088/users?email=${email}`)
+    return fetch(`${API}/users?email=${email}`)
             .then(res => res.json())
 }
 
 export const existingUserInfo = (user) => {
-    return fetch(`http://localhost:8088/users?email=${user.email}`)
+    return fetch(`${API}/users?email=${user.email}`)
             .then(res => res.json())
 }
 

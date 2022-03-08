@@ -8,6 +8,14 @@ ADDS RECORD TO RECORDS ARRAY IN API AND SHOULD ALSO ADD TO CRATE OR COLLECTION A
 
 //EXPORT A RECORDFORM FUNCTION TO ROUTE IN WAX.JS
 export const RecordForm = () => {
+    const [records, setRecords] = useState([])
+    useEffect(() => {
+        fetch("http://localhost:8088/records")
+            .then((res) => res.json())
+            .then((recordData) => {
+                setRecords(recordData)
+            });
+    }, []);
     //DEFINE FORM STATE TO ALTER/UPDATE
     //INIATIATE OBJECT PROPERTIES FOR ADDING TO API WHEN FORM SUBMITTED
     const [form, updateForm] = useState({
@@ -22,7 +30,7 @@ export const RecordForm = () => {
     });
 
     //create destination state variable to allow radio button selection to route to different pages
-    const [destination, updateDestination] = useState ("")
+    const [destination, updateDestination] = useState("")
 
     //ACCESS GENRE ARRAY STATE TO HAVE DROPDOWN FOR ALL GENRES
     const [genreChoices, setGenreChoice] = useState([]);
@@ -59,16 +67,32 @@ export const RecordForm = () => {
             },
             body: JSON.stringify(newForm)
         } //FETCH RECORDS FROM API
+        //create new object for crate or collection based on user
+        const crateCollectObject = {
+            userId: parseInt(localStorage.getItem("wax_user")),
+            recordId: parseInt(records.length + 1)
+        }
+        const fetchCrateCollect = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(crateCollectObject)
+        } //FETCH RECORDS FROM API
         return fetch("http://localhost:8088/records", fetchOption)
             .then(response => response.json())
             .then(() => {
                 //conditional to update destination state variable to route to certain pages
                 if (destination === "crate") {
                     history.push("/crate")
+                    return fetch("http://localhost:8088/crate", fetchCrateCollect)
+                        .then(response => response.json())
                 } else if (destination === "collection") {
                     history.push("/collection")
+                    return fetch("http://localhost:8088/collection", fetchCrateCollect)
+                        .then(response => response.json())
                 }
-                
+
             })
 
     }

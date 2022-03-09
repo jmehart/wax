@@ -57,8 +57,8 @@ export const CrateList = () => {
     return (
         //fragment to put children under single component
         <>
-        <section className="crate">
-            <h2>Crate</h2>
+        <section className="crateSection">
+            <h1 className="crateTitle">Crate</h1>
                 {
                     //interpolating an html representation that maps through products
                     userCrate.map(
@@ -74,7 +74,7 @@ export const CrateList = () => {
                                 <p>{crateObject.record.artist}</p>
                                 <img className="cover" alt="albumCover" src={crateObject.record.albumCover} />
                                 </li>
-                                <div>
+                                <div className="crateBtn">
                                         <button className="btn-crate" 
                                         onClick={
                                             (event) => { 

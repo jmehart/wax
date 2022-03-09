@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { Link } from "react-router-dom"
+import "./Collection.css"
 
 export const CollectionList = () => {
     //declare and deconstruct and array - this is a hook function that defines state
@@ -44,8 +45,8 @@ export const CollectionList = () => {
     return (
         //fragment to put children under single component
         <>
-            <section className="collection">
-                <h2>Collection</h2>
+            <section className="collectionSection">
+                <h1 className="collectionTitle">Collection</h1>
                 {
                     //interpolating an html representation that maps through products
                     userCollection.map(
@@ -61,7 +62,7 @@ export const CollectionList = () => {
                                         <p>{collectionObject.record.artist}</p>
                                         <img className="cover" alt="albumCover" src={collectionObject.record.albumCover} />
                                     </li>
-                                    <div>
+                                    <div className="collectionBtn">
                                         <button className="btn-collection" 
                                         onClick={
                                             (event) => { 

@@ -5,6 +5,7 @@ import { CollectionRecord } from "./collection/CollectionRecord"
 import { CrateList } from "./crate/CrateList"
 import { CrateRecord } from "./crate/CrateRecord"
 import { HomePage } from "./home/HomePage"
+import { Record } from "./records/Record"
 
 
 
@@ -20,15 +21,13 @@ export const ApplicationViews = () => {
             <Route exact path="/crate">
                 <CrateList />
             </Route>
-            <Route exact path="/crate/:recordId(\d+)">
-                <CrateRecord />
+            <Route path="/records/:recordId(\d+)">
+                <Record />
             </Route>
             <Route exact path="/collection">
                 <CollectionList />
             </Route>
-            <Route exact path="/collection/:recordId(\d+)">
-                <CollectionRecord />
-            </Route>
+
         </>
     )
 }

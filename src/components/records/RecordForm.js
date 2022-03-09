@@ -154,6 +154,57 @@ export const RecordForm = () => {
                             placeholder="Enter Catalog Number"
                         />
                     </div>
+                    <div className="form-group">
+                        <label htmlFor="releaseDate">Release Date</label>
+                        <input
+                            onChange={
+                                (evt) => {
+                                    const copy = { ...form }
+                                    copy.releaseDate = evt.target.value
+                                    updateForm(copy)
+                                }
+                            }
+                            required autoFocus
+                            type="text"
+                            className="form-control"
+                            placeholder="Enter Release Date"
+                        />
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="genre">Genre</label>
+                        <select onChange={
+                            (evt) => {
+                                const copy = { ...form }
+                                copy.genreId = parseInt(evt.target.value)
+                                updateForm(copy)
+                            }
+                        }>
+                            <option value="">Choose a Genre</option>
+                            {genreChoices.map((genreObject) => {
+                                return <option key={`${genreObject.id}`} value={genreObject.id}>{genreObject.genre}</option>
+                            })}
+                        </select>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="albumCover">Album Cover</label>
+                        <input
+                            onChange={
+                                (evt) => {
+                                    const copy = { ...form }
+                                    copy.albumCover = evt.target.value
+                                    updateForm(copy)
+                                }
+                            }
+                            required autoFocus
+                            type="text"
+                            className="form-control"
+                            placeholder="Enter Image URL"
+                        />
+                    </div>
                 </fieldset>
                 <fieldset>
                     <div className="form-group">
@@ -178,23 +229,7 @@ export const RecordForm = () => {
                             } />
                     </div>
                 </fieldset>
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="genre">Genre</label>
-                        <select onChange={
-                            (evt) => {
-                                const copy = { ...form }
-                                copy.genreId = parseInt(evt.target.value)
-                                updateForm(copy)
-                            }
-                        }>
-                            <option value="">Choose a Genre</option>
-                            {genreChoices.map((genreObject) => {
-                                return <option key={`${genreObject.id}`} value={genreObject.id}>{genreObject.genre}</option>
-                            })}
-                        </select>
-                    </div>
-                </fieldset>
+
                 <button className="btn btn-primary" onClick={saveForm}>
                     Add
                 </button>

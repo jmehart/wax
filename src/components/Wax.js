@@ -5,7 +5,7 @@ import { NavBar } from "./nav/NavBar";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 import "./Wax.css";
-import { HomePage } from "./home/HomePage";
+
 
 //route has customer rendering function to specify if needed
 //when the url is that, render this component..

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export const CollectionList = () => {
     //declare and deconstruct and array - this is a hook function that defines state
@@ -53,9 +54,12 @@ export const CollectionList = () => {
 
                             return <div className="collectionContainer" key={`collection--${collectionObject.id}`}>
                                 <ul>
-                                    <li key={`collectionItem--${collectionObject.record.id}`}><h3>{collectionObject.record.album}</h3>
+                                    <li key={`collectionItem--${collectionObject.record.id}`}>
+                                    <Link to={`/collection/${collectionObject.id}`}>
+                                    <h3>{collectionObject.record.album}</h3>
+                                    </Link>
                                         <p>{collectionObject.record.artist}</p>
-                                        <img className="cover" src={collectionObject.record.albumCover} />
+                                        <img className="cover" alt="albumCover" src={collectionObject.record.albumCover} />
                                     </li>
                                     <div>
                                         <button className="btn-collection" 

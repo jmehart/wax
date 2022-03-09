@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
-export const Record = () => {
+export const CrateRecord = () => {
     const [records, setRecord] = useState([])
     const { recordId } = useParams()
 
@@ -29,6 +29,10 @@ export const Record = () => {
 
                                 <p>{records.record?.artist}</p>
                                 <img className="cover" alt="albumCover" src={records.record?.albumCover} />
+                                <p>Cataloge #: {records.record?.catalogNumber}</p>
+                                <p>Value: {records.record?.value}</p>
+                                <p>Release Date: {records.record?.releaseDate}</p>
+                                <p>Rating: {records.record?.rating}/5</p>
                             </li>
 
                         </ul>

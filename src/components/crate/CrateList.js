@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./Crate.css"
 
 export const CrateList = () => {
@@ -28,6 +29,18 @@ export const CrateList = () => {
         []
     )
 
+        //ACCESS GENRE ARRAY STATE TO HAVE DROPDOWN FOR ALL GENRES
+        const [genreChoices, setGenreChoice] = useState([]);
+
+        //FETCH CALL TO ACCESS GENRES AND SET A GENRE CHOICE
+        useEffect(() => {
+            fetch("http://localhost:8088/genres")
+                .then((res) => res.json())
+                .then((genres) => {
+                    setGenreChoice(genres)
+                });
+        }, []);
+
 
     const history = useHistory()
 
@@ -54,9 +67,12 @@ export const CrateList = () => {
                             
                             return <div className="crateContainer" key={`crate--${crateObject.id}`}>
                                 <ul>
-                                <li key={`crateItem--${crateObject.record.id}`}><h3>{crateObject.record.album}</h3>
+                                <li key={`crateItem--${crateObject.record.id}`}>
+                                    <Link to={`/crate/${crateObject.id}`}>
+                                    <h3>{crateObject.record.album}</h3>
+                                    </Link>
                                 <p>{crateObject.record.artist}</p>
-                                <img className="cover" src={crateObject.record.albumCover} />
+                                <img className="cover" alt="albumCover" src={crateObject.record.albumCover} />
                                 </li>
                                 <div>
                                         <button className="btn-crate" 

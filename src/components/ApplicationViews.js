@@ -1,8 +1,11 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { CollectionList } from "./collection/CollectionList"
+import { CollectionRecord } from "./collection/CollectionRecord"
 import { CrateList } from "./crate/CrateList"
+import { CrateRecord } from "./crate/CrateRecord"
 import { HomePage } from "./home/HomePage"
+
 
 
 //Define how your application will respond when the URL matches each of those patterns
@@ -17,8 +20,14 @@ export const ApplicationViews = () => {
             <Route exact path="/crate">
                 <CrateList />
             </Route>
+            <Route exact path="/crate/:recordId(\d+)">
+                <CrateRecord />
+            </Route>
             <Route exact path="/collection">
                 <CollectionList />
+            </Route>
+            <Route exact path="/collection/:recordId(\d+)">
+                <CollectionRecord />
             </Route>
         </>
     )

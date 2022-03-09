@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom"
+import "./Record.css"
 /*
 THIS MODULE IS RESPONSIBLE FOR THE RECORD INPUT FORM
 USERS CAN MANUALLY ENTER RECORD INFO TO EITHER ADD TO CRATE OR COLLECTION
@@ -173,7 +174,7 @@ export const RecordForm = () => {
                 </fieldset>
                 <fieldset>
                     <div className="form-group">
-                        <label htmlFor="genre">Genre</label>
+                        <label className="genreLabel" htmlFor="genre">Genre</label>
                         <select onChange={
                             (evt) => {
                                 const copy = { ...form }
@@ -229,10 +230,11 @@ export const RecordForm = () => {
                             } />
                     </div>
                 </fieldset>
-
-                <button className="btn btn-primary" onClick={saveForm}>
+                <div className="addBtn">
+                <button className="btn btn-add" onClick={saveForm}>
                     Add
                 </button>
+                </div>
             </form>
         </div>
     )

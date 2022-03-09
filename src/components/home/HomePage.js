@@ -1,5 +1,6 @@
 import React from "react"
 import { RecordForm } from "../records/RecordForm"
+import "./HomePage.css"
 
 /*
 THIS MODULE IS RESPONSIBLE FOR RENDERING THE HOME PAGE
@@ -13,7 +14,7 @@ export const HomePage = () => {
     
     return (
         <>
-        <h1>WAX Home Page</h1>
+        <h1 className="waxTitle">WAX</h1>
         <RecordForm />
         </>
     )

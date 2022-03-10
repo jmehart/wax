@@ -51,7 +51,6 @@ fieldset {
    
 }
 
-
 .button--close {
     position: relative;
     bottom: -2rem;
@@ -60,4 +59,8 @@ fieldset {
 .dialog {
     min-width: 15rem;
     min-height: 5rem;
+}
+
+.link--backToLogin {
+    padding-right: 8em;
 }

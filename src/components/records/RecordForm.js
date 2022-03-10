@@ -209,6 +209,7 @@ export const RecordForm = () => {
                 </fieldset>
                 <fieldset>
                     <div className="form-group">
+                    <div className="addToButtons">
                         <label className="radioLabel" htmlFor="addCrate">Add to Crate</label>
                         <input type="radio"
                             name="addRadio"
@@ -219,7 +220,9 @@ export const RecordForm = () => {
                                 }
                             } />
                     </div>
+                    </div>
                     <div className="form-group">
+                        <div className="addToButtons">
                         <label className="radioLabel" htmlFor="addCollection">Add to Collection</label>
                         <input type="radio"
                             name="addRadio"
@@ -228,6 +231,7 @@ export const RecordForm = () => {
                                     updateDestination("collection")
                                 }
                             } />
+                    </div>
                     </div>
                 </fieldset>
                 <div className="addBtn">

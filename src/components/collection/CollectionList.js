@@ -59,8 +59,10 @@ export const CollectionList = () => {
                                     <Link to={`/records/${collectionObject.record.id}`}>
                                     <h3>{collectionObject.record.album}</h3>
                                     </Link>
-                                        <p>{collectionObject.record.artist}</p>
+                                        <h3>{collectionObject.record.artist}</h3>
+                                        <Link to={`/records/${collectionObject.record.id}`}>
                                         <img className="cover" alt="albumCover" src={collectionObject.record.albumCover} />
+                                        </Link>
                                     </li>
                                     <div className="collectionBtn">
                                         <button className="btn-collection" 

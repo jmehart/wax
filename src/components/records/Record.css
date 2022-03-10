@@ -32,3 +32,21 @@
     display: flex;
     justify-content: center;
 }
+
+.Record {
+    background-image: url("https://i.ibb.co/BN5qXC5/istockphoto-503242322-612x612-copy.jpg");
+    background-repeat: no-repeat;
+    background-size: 700px;
+    background-position: center top;
+    display: flex;
+    justify-content: center;
+    padding-top: 220px;
+    padding-bottom: 200px;
+}
+
+.cover {
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+

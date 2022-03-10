@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react"
 import { useHistory } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { existingUserInfo, sendNewUser } from "../APIManager"
 import "./Register.css"
 
@@ -81,6 +82,9 @@ export const Register = (props) => {
                     <button type="submit"> Register </button>
                 </fieldset>
             </form>
+            <section className="link--backToLogin">
+                <Link to="/login">Go Back to Login</Link>
+            </section>
         </main>
     )
 }

@@ -71,8 +71,10 @@ export const CrateList = () => {
                                     <Link to={`/records/${crateObject.record.id}`}>
                                     <h3>{crateObject.record.album}</h3>
                                     </Link>
-                                <p>{crateObject.record.artist}</p>
+                                <h3>{crateObject.record.artist}</h3>
+                                <Link to={`/records/${crateObject.record.id}`}>
                                 <img className="cover" alt="albumCover" src={crateObject.record.albumCover} />
+                                </Link>
                                 </li>
                                 <div className="crateBtn">
                                         <button className="btn-crate" 

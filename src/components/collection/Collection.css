@@ -24,3 +24,12 @@ ul {
     text-align: center;
     padding-bottom: 20px;
 }
+
+.collectionList {
+    background-color: rgba(213, 59, 69, 0.845);
+    max-width: 9500px; 
+    margin: 10px 450px;
+	float: none !important; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

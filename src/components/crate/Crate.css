@@ -24,3 +24,12 @@ ul {
     text-align: center;
     padding-bottom: 20px;
 }
+
+.crateList {
+    background-color: rgba(255, 204, 127, 0.831);
+	max-width: 9500px; 
+    margin: 10px 450px;
+	float: none !important; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

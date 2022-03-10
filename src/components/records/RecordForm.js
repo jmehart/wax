@@ -209,7 +209,7 @@ export const RecordForm = () => {
                 </fieldset>
                 <fieldset>
                     <div className="form-group">
-                        <label htmlFor="addCrate">Add to Crate</label>
+                        <label className="radioLabel" htmlFor="addCrate">Add to Crate</label>
                         <input type="radio"
                             name="addRadio"
                             value="crate"
@@ -220,7 +220,7 @@ export const RecordForm = () => {
                             } />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="addCollection">Add to Collection</label>
+                        <label className="radioLabel" htmlFor="addCollection">Add to Collection</label>
                         <input type="radio"
                             name="addRadio"
                             onChange={

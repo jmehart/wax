@@ -66,7 +66,7 @@ export const CrateList = () => {
                         (crateObject) => {
                             
                             return <div className="crateContainer" key={`crate--${crateObject.id}`}>
-                                <ul>
+                                <ul className="crateList">
                                 <li key={`crateItem--${crateObject.record.id}`}>
                                     <Link to={`/records/${crateObject.record.id}`}>
                                     <h3>{crateObject.record.album}</h3>

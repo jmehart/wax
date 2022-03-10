@@ -1,14 +1,19 @@
 .recordFormParent {
     display: flex;
     justify-content: center;
-    background-color: rgb(255, 233, 111);
-	max-width: 600px; 
+    background-image: url("https://i.ibb.co/F4QtvSg/istockphoto-1041993546-612x612-copy.jpg");
+    background-size: cover;
+	max-width: 900px; 
 	margin: 0 auto !important; 
 	float: none !important; 
     padding-top: 30px;
 }
 
 .genreLabel {
+    padding-right: 10px;
+}
+
+.radioLabel {
     padding-right: 10px;
 }
 

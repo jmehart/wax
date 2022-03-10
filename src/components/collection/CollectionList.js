@@ -54,7 +54,7 @@ export const CollectionList = () => {
                         (collectionObject) => {
 
                             return <div className="collectionContainer" key={`collection--${collectionObject.id}`}>
-                                <ul>
+                                <ul className="collectionList">
                                     <li key={`collectionItem--${collectionObject.record.id}`}>
                                     <Link to={`/records/${collectionObject.record.id}`}>
                                     <h3>{collectionObject.record.album}</h3>

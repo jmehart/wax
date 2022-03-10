@@ -25,25 +25,26 @@ export const Record = () => {
 
                 <div className="RecordContainer" key={`Record--${record.id}`}>
                     <ul>
-                        <li key={`RecordItem--${record.id}`}>
+                        <li className="aRecord" key={`RecordItem--${record.id}`}>
 
-                            <h3>{record.album}</h3>
+                            <p>Album: <h3>{record.album}</h3></p>
 
-                            <p>{record.artist}</p>
+                            <p>Artist: <h4>{record.artist}</h4></p>
+                            
                             <img className="cover" alt="albumCover" src={record.albumCover} />
-                            <p>Catalog #: {record.catalogNumber}</p>
+                            <p>Catalog #: <b>{record.catalogNumber}</b></p>
 
-                            <p>Genre: {record.genre?.genre}</p>
+                            <p>Genre: <b>{record.genre?.genre}</b></p>
 
                             {record.value &&
-                                <p>Value: {record.value}</p>
+                                <p>Value: <b>{record.value}</b></p>
                             }
 
                             {record.releaseDate &&
-                                <p>Release Date: {record.releaseDate}</p>
+                                <p>Release Date: <b>{record.releaseDate}</b></p>
                             }
                             {record.rating &&
-                                <p>Rating: {record.rating}/5</p>
+                                <p>Rating: <b>{record.rating}</b>/5</p>
                             }
                         </li>
 

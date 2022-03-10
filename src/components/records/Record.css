@@ -1,0 +1,52 @@
+.recordFormParent {
+    display: flex;
+    justify-content: center;
+    background-image: url("https://i.ibb.co/F4QtvSg/istockphoto-1041993546-612x612-copy.jpg");
+    background-size: cover;
+	max-width: 900px; 
+	margin: 0 auto !important; 
+	float: none !important; 
+    padding-top: 30px;
+}
+
+.genreLabel {
+    padding-right: 10px;
+}
+
+.radioLabel {
+    padding-right: 10px;
+}
+
+.btn-add {
+    padding: 5px 10px;
+}
+
+.addBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.recordForm__title {
+    display: flex;
+    justify-content: center;
+}
+
+.Record {
+    background-image: url("https://i.ibb.co/BN5qXC5/istockphoto-503242322-612x612-copy.jpg");
+    background-repeat: no-repeat;
+    background-size: 700px;
+    background-position: center top;
+    display: flex;
+    justify-content: center;
+    padding-top: 220px;
+    padding-bottom: 200px;
+}
+
+.cover {
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+

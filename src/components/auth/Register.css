@@ -15,9 +15,7 @@ fieldset {
     text-align: left;
 }
 
-.form--login > fieldset > input[type="email"] {
-    width: 25em;
-}
+
 
 .label--login {
     width: 8rem;
@@ -26,14 +24,15 @@ fieldset {
 
 .form-control {
     display: block;
-    width: 94%;
+    width: 25em;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
-    background-color: transparent;
+    background-color: #fff;
+    background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
     -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -45,21 +44,11 @@ fieldset {
     font-size: 75px;
 }
 
-.container--login {
+.container--register {
     text-align: center;
     padding-top: 200px;
     padding-left: 125px;
-}
-
-.form--login {
-    background-position-x: right;
-    z-index: 1;
-    min-height: 25rem;
-    min-width: 50rem;
-    background-image: url("https://thumbs.dreamstime.com/b/illustration-what-made-ink-pencil-paper-then-was-digitalized-vinyl-player-drawing-engraving-line-art-vector-147936347.jpg");
-    background-repeat: no-repeat;
-    background-size: 300px;
-    background-position: 30em;
+   
 }
 
 .button--close {
@@ -72,6 +61,6 @@ fieldset {
     min-height: 5rem;
 }
 
-.link--register {
+.link--backToLogin {
     padding-right: 8em;
 }

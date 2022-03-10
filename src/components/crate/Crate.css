@@ -1,4 +1,44 @@
 .cover {
     width: 200px;
     height: auto;
+    
+}
+
+.crateContainer {
+    text-align: center;
+    padding: 20px;
+    display: grid;
+    gap: 50px;
+    background-image: url("https://i.ibb.co/1RzzS62/tumblr-nhyd8smpx-M1qa0ub6o1-r1-500.jpg") ;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style: none
+}
+
+.crateBtn {
+    padding-top: 15px;
+}
+
+.crateTitle {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.crateList {
+    background-color: rgba(215, 178, 30, 0.721);
+	min-width: 400px; 
+    max-width: 400px;
+    margin: 10px 325px;
+	float: none !important; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.btn-crate {
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.81);
 }

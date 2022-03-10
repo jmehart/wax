@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react"
 import { useHistory } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { existingUserInfo, sendNewUser } from "../APIManager"
-import "./Login.css"
+import "./Register.css"
 
 /*
 THIS MODULE IS RESPONSIBLE FOR REGISTERING A NEW USER
@@ -59,7 +60,7 @@ export const Register = (props) => {
     //REGISTRATION FIELDS SECTION - INCLUDE PASSWORD LATER
     //REGISTER BUTTON
     return (
-        <main style={{ textAlign: "center" }}>
+        <main className="container--register" style={{ textAlign: "center" }}>
             <dialog className="dialog dialog--password" ref={conflictDialog}>
                 <div>Account with that email address already exists</div>
                 <button className="button--close" onClick={e => conflictDialog.current.close()}>Close</button>
@@ -81,6 +82,9 @@ export const Register = (props) => {
                     <button type="submit"> Register </button>
                 </fieldset>
             </form>
+            <section className="link--backToLogin">
+                <Link to="/login">Go Back to Login</Link>
+            </section>
         </main>
     )
 }

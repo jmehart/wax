@@ -1,0 +1,45 @@
+.cover {
+    width: 200px;
+    height: auto;
+}
+
+.collectionContainer {
+    text-align: center;
+    padding: 20px;
+    display: grid;
+    gap: 50px;
+    background-image: url("https://pbs.twimg.com/media/DZJiUvvV4AMCwHM.jpg") ;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+ul {
+    list-style: none
+}
+
+.collectionBtn {
+    padding-top: 15px;
+}
+
+.collectionTitle {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.collectionList {
+
+    background-color: rgba(213, 59, 69, 0.774);
+	min-width: 400px; 
+    max-width: 400px;
+    margin: 10px 325px;
+	float: none !important; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.btn-collection {
+    padding: 5px;
+    background-color: rgba(255, 239, 241, 0.831);
+}

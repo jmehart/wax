@@ -1,10 +1,92 @@
-.navbar {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: left;
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.navbar__item {
-    flex-basis: 20%;
-    list-style-type: none;
+.clear{
+  clear: both;
 }
+
+
+.slide-toggle{
+  display: none;
+}
+
+.slidemenu{
+  font-family: 'Montserrat', sans-serif;
+  max-width: 400px;
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+.slidemenu label{
+  width: 25%;
+  text-align: center;
+  display: block;
+  float: left;
+  color: #333;
+  opacity: 0.8;
+
+}
+
+.slidemenu label:hover{
+  cursor: pointer;
+  color: #666;
+}
+
+.slidemenu label span{
+  display: block;
+  padding: 10px;    
+}
+
+
+
+.slidemenu label .icon{
+  font-size: 20px;
+  border: solid 2px rgb(69, 69, 69);
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: 0 auto;
+  line-height: 50px;
+  border-radius: 50%;
+}
+
+/*Bar Style*/
+
+.slider{
+  width: 100%;
+  height: 5px;
+  display: block;
+  background: rgb(174, 174, 174);
+  margin-top: 40px;
+  border-radius: 5px;
+}
+
+
+.icon:hover {
+    background-color: #d1b515;
+    color: rgb(255, 255, 255);
+  }
+
+  .logoutIcon {
+    max-width: 15px;
+  }
+
+  .homeIcon {
+      max-width: 15px;
+  }
+
+.icon {
+    color: black;
+}
+
+.navLink {
+    color: #333;
+}
+
+
+  

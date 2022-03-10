@@ -8,7 +8,7 @@ export const CrateList = () => {
     //const below returns a value and function to accept the value (I'm getting this value and using it for this function's purpose)
     //useState takes a single arguement - the array input below
     const [crate, setCrate] = useState([])
- 
+
     const userCrate = crate.filter((crateObject) => crateObject.userId === parseInt(localStorage.getItem("wax_user")));
     //useState returns an array
     //built in function/hook - useEffect - takes two arguments (function and array)
@@ -17,7 +17,7 @@ export const CrateList = () => {
     useEffect(
         //get data from API and pull it into application state of products
         () => {
-           //crate links to recordId and userId
+            //crate links to recordId and userId
             fetch(`http://localhost:8088/crate?_expand=record&expand=user&_sort=recordId`)
                 .then(res => res.json())
                 .then((crateArray) => {
@@ -29,17 +29,17 @@ export const CrateList = () => {
         []
     )
 
-        //ACCESS GENRE ARRAY STATE TO HAVE DROPDOWN FOR ALL GENRES
-        const [genreChoices, setGenreChoice] = useState([]);
+    //ACCESS GENRE ARRAY STATE TO HAVE DROPDOWN FOR ALL GENRES
+    const [genreChoices, setGenreChoice] = useState([]);
 
-        //FETCH CALL TO ACCESS GENRES AND SET A GENRE CHOICE
-        useEffect(() => {
-            fetch("http://localhost:8088/genres")
-                .then((res) => res.json())
-                .then((genres) => {
-                    setGenreChoice(genres)
-                });
-        }, []);
+    //FETCH CALL TO ACCESS GENRES AND SET A GENRE CHOICE
+    useEffect(() => {
+        fetch("http://localhost:8088/genres")
+            .then((res) => res.json())
+            .then((genres) => {
+                setGenreChoice(genres)
+            });
+    }, []);
 
 
     const history = useHistory()
@@ -53,14 +53,22 @@ export const CrateList = () => {
             })
     }
 
+
+    //CREATE FUNCTION TO MOVE A CRATE RECORD TO COLLECTION AND DELETE FROM CRATE
     const moveToCollection = (event) => {
         event.preventDefault()
+
+        const crateRecord = userCrate.map(
+            //paramater captures each individual product object as it iterates
+            (crateObject) => { 
+                return crateObject.recordId
+            })
 
         //FETCH RECORDS FROM API
         //create new object for crate or collection based on user
         const crateCollectObject = {
             userId: parseInt(localStorage.getItem("wax_user")),
-            recordId: parseInt(crate.record.id)
+            recordId: parseInt(crateRecord)
         }
         const fetchCrateCollect = {
             method: "POST",
@@ -74,8 +82,7 @@ export const CrateList = () => {
             .then(() => {
                 //conditional to update destination state variable to route to certain pages
 
-                    history.go("/collection")
-
+                history.go("/crate")
 
             })
 
@@ -85,35 +92,45 @@ export const CrateList = () => {
     return (
         //fragment to put children under single component
         <>
-        <section className="crateSection">
-            <h1 className="crateTitle">Crate</h1>
+            <section className="crateSection">
+                <h1 className="crateTitle">Crate</h1>
                 {
                     //interpolating an html representation that maps through products
                     userCrate.map(
                         //paramater captures each individual product object as it iterates
                         (crateObject) => {
-                            
+
                             return <div className="crateContainer" key={`crate--${crateObject.id}`}>
                                 <ul className="crateList">
-                                <li key={`crateItem--${crateObject.record.id}`}>
-                                    <Link to={`/records/${crateObject.record.id}`}>
-                                    <h3>{crateObject.record.album}</h3>
-                                    </Link>
-                                <h3>{crateObject.record.artist}</h3>
-                                <Link to={`/records/${crateObject.record.id}`}>
-                                <img className="cover" alt="albumCover" src={crateObject.record.albumCover} />
-                                </Link>
-                                </li>
-                                <div className="crateBtn">
-                                        <button className="btn-crate" 
+                                    <li key={`crateItem--${crateObject.record.id}`}>
+                                        <Link to={`/records/${crateObject.record.id}`}>
+                                            <h3>{crateObject.record.album}</h3>
+                                        </Link>
+                                        <h3>{crateObject.record.artist}</h3>
+                                        <Link to={`/records/${crateObject.record.id}`}>
+                                            <img className="cover" alt="albumCover" src={crateObject.record.albumCover} />
+                                        </Link>
+                                    </li>
+                                    <div className="moveBtn">
+                                        <button className="btn-move" 
                                         onClick={
-                                            (event) => { 
-                                                event.preventDefault()
-                                                deleteRecordInCrate(crateObject.id) }}>Remove Record</button>
+                                            moveToCollection
+                                            }>
+                                            Move to Collection
+                                        </button>
+                                    </div>    
+                                    <div className="deleteBtn">
+                                        <button className="btn-crate"
+                                            onClick={
+                                                (event) => {
+                                                    event.preventDefault()
+                                                    deleteRecordInCrate(crateObject.id)
+                                                }}>
+                                                    Remove Record</button>
                                     </div>
                                 </ul>
 
-                                
+
                             </div>
                         }
                     )

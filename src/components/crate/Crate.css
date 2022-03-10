@@ -19,9 +19,10 @@ ul {
     list-style: none
 }
 
-.crateBtn {
+.deleteBtn {
     padding-top: 15px;
 }
+
 
 .crateTitle {
     text-align: center;
@@ -36,6 +37,11 @@ ul {
 	float: none !important; 
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.btn-move {
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.81);
 }
 
 .btn-crate {

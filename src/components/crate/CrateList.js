@@ -53,6 +53,34 @@ export const CrateList = () => {
             })
     }
 
+    const moveToCollection = (event) => {
+        event.preventDefault()
+
+        //FETCH RECORDS FROM API
+        //create new object for crate or collection based on user
+        const crateCollectObject = {
+            userId: parseInt(localStorage.getItem("wax_user")),
+            recordId: parseInt(crate.record.id)
+        }
+        const fetchCrateCollect = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(crateCollectObject)
+        } //FETCH RECORDS FROM API
+        return fetch("http://localhost:8088/collection", fetchCrateCollect)
+            .then(response => response.json())
+            .then(() => {
+                //conditional to update destination state variable to route to certain pages
+
+                    history.go("/collection")
+
+
+            })
+
+    }
+
 
     return (
         //fragment to put children under single component

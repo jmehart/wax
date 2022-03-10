@@ -1,7 +1,7 @@
 .recordFormParent {
     display: flex;
     justify-content: center;
-    background-image: url("https://i.ibb.co/F4QtvSg/istockphoto-1041993546-612x612-copy.jpg");
+    background-image: url("/Users/jaimiehart/workspace/client-capstone/wax/src/images/homeBackground.jpg");
     background-size: cover;
 	max-width: 900px; 
 	margin: 0 auto !important; 
@@ -34,7 +34,7 @@
 }
 
 .Record {
-    background-image: url("https://i.ibb.co/BN5qXC5/istockphoto-503242322-612x612-copy.jpg");
+    background-image: url("/Users/jaimiehart/workspace/client-capstone/wax/src/images/istockphoto-503242322-612x612 copy.jpg");
     background-repeat: no-repeat;
     background-size: 700px;
     background-position: center top;

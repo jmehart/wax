@@ -49,7 +49,7 @@ export const NavBar = (props) => {
                     onClick={() => {
                         localStorage.removeItem("wax_user")
                     }}>
-                    <p className="icon"><img className="logoutIcon" src="https://cdn-icons.flaticon.com/png/512/3889/premium/3889524.png?token=exp=1646929824~hmac=258114356de572013c39a655bc7437c7" /></p>
+                    <p className="icon"><img className="logoutIcon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_logOut-ltr.svg/1200px-OOjs_UI_icon_logOut-ltr.svg.png" /></p>
                     <span>Logout</span>
                 </Link>
             </label>

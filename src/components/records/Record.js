@@ -27,9 +27,9 @@ export const Record = () => {
                     <ul>
                         <li className="aRecord" key={`RecordItem--${record.id}`}>
 
-                            <p>Album: <h3>{record.album}</h3></p>
+                            Album: <h3>{record.album}</h3>
 
-                            <p>Artist: <h4>{record.artist}</h4></p>
+                            Artist: <h4>{record.artist}</h4>
                             
                             <img className="cover" alt="albumCover" src={record.albumCover} />
                             <p>Catalog #: <b>{record.catalogNumber}</b></p>

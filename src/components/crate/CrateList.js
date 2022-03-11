@@ -29,17 +29,7 @@ export const CrateList = () => {
         []
     )
 
-    //ACCESS GENRE ARRAY STATE TO HAVE DROPDOWN FOR ALL GENRES
-    const [genreChoices, setGenreChoice] = useState([]);
-
-    //FETCH CALL TO ACCESS GENRES AND SET A GENRE CHOICE
-    useEffect(() => {
-        fetch("http://localhost:8088/genres")
-            .then((res) => res.json())
-            .then((genres) => {
-                setGenreChoice(genres)
-            });
-    }, []);
+ 
 
 
     const history = useHistory()
@@ -55,20 +45,15 @@ export const CrateList = () => {
 
 
     //CREATE FUNCTION TO MOVE A CRATE RECORD TO COLLECTION AND DELETE FROM CRATE
-    const moveToCollection = (event) => {
-        event.preventDefault()
+    const moveToCollection = (id) => {
 
-        const crateRecord = userCrate.map(
-            //paramater captures each individual product object as it iterates
-            (crateObject) => { 
-                return crateObject.recordId
-            })
 
-        //FETCH RECORDS FROM API
+
+       
         //create new object for crate or collection based on user
         const crateCollectObject = {
             userId: parseInt(localStorage.getItem("wax_user")),
-            recordId: parseInt(crateRecord)
+            recordId: parseInt(id)
         }
         const fetchCrateCollect = {
             method: "POST",
@@ -76,11 +61,10 @@ export const CrateList = () => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(crateCollectObject)
-        } //FETCH RECORDS FROM API
+        } 
         return fetch("http://localhost:8088/collection", fetchCrateCollect)
             .then(response => response.json())
             .then(() => {
-                //conditional to update destination state variable to route to certain pages
 
                 history.go("/crate")
 
@@ -112,13 +96,17 @@ export const CrateList = () => {
                                         </Link>
                                     </li>
                                     <div className="moveBtn">
-                                        <button className="btn-move" 
-                                        onClick={
-                                            moveToCollection
-                                            }>
+                                        <button className="btn-move"
+                                        id={crateObject.recordId}
+                                            onClick={
+                                                (event) => {
+                                                    event.preventDefault()
+                                                    moveToCollection(event.target.id)
+                                                    deleteRecordInCrate(crateObject.id)
+                                                }}>
                                             Move to Collection
                                         </button>
-                                    </div>    
+                                    </div>
                                     <div className="deleteBtn">
                                         <button className="btn-crate"
                                             onClick={
@@ -126,7 +114,7 @@ export const CrateList = () => {
                                                     event.preventDefault()
                                                     deleteRecordInCrate(crateObject.id)
                                                 }}>
-                                                    Remove Record</button>
+                                            Remove Record</button>
                                     </div>
                                 </ul>
 

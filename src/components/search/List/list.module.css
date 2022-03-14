@@ -1,0 +1,13 @@
+.container {
+    text-align: center;
+    margin-bottom: 5em;
+    
+  }
+  
+  .list {
+    list-style: none;
+  }
+  
+  .item {
+    margin-top: 1vw;
+  }

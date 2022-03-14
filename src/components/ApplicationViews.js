@@ -1,9 +1,9 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { CollectionList } from "./collection/CollectionList"
-import { CollectionRecord } from "./collection/CollectionRecord"
+
 import { CrateList } from "./crate/CrateList"
-import { CrateRecord } from "./crate/CrateRecord"
+
 import { HomePage } from "./home/HomePage"
 import { Record } from "./records/Record"
 

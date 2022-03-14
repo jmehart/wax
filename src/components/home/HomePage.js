@@ -16,6 +16,7 @@ export const HomePage = () => {
         <>
         <h1 className="waxTitle">WAX</h1>
         <RecordForm />
+        
         </>
     )
 }

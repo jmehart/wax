@@ -5,15 +5,15 @@ import { config } from "./config";
 
 /**
  * submit the search with the artist to the Discogs API
- * @param {String} artist
+ * @param {String} release
  * @returns {Promise<Object>} a promise that resolves to a JSON object with the response
  */
-export const submitSearch = async artist => {
+export const submitSearch = async release => {
   const { consumerKey, secretKey, baseUri } = config;
 
   const query = {
-    q: artist,
-    type: "artist",
+    q: release,
+    type: "release",
     pages: 1,
     per_page: 10
   };

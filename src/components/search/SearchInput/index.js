@@ -14,7 +14,7 @@ export const SearchInput = props => {
 
             <input
                 className={styles.input}
-                placeholder="Artist Name"
+                placeholder="Album Name"
                 type="text"
                 onKeyUp={evt => debounce(props.keyup(evt), 300)}
             ></input>

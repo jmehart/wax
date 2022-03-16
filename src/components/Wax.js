@@ -26,6 +26,7 @@ export const Wax = () => (
                             <NavBar />
                             <ApplicationViews />
                                 
+                                
                                 <Switch>
                                     <Route path="/artist" component={Artist} />
                                     <Route path="/" component={Search} />

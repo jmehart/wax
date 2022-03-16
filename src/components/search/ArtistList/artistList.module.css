@@ -5,3 +5,7 @@
   color: var(--main-font-colour);
   font-size: 1.5vw;
 }
+
+.artist {
+  padding-bottom: 2em;;
+}

@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Teko|Roboto:400,700");
+.app {
+  font-family: "Arimo", Arial, sans-serif; }
+
+.header {
+  font-family: "Teko", Arial, sans-serif;
+  font-size: 26px;
+  letter-spacing: .01em;
+  background-color: #262626;
+  color: #ffffff;
+  padding: 10px;
+  margin-bottom: 15px;
+  /*font-weight: bold;*/ }
+
+.header__img {
+  margin: -4px 2px 0 0; }
+
+.section {
+  margin-top: 40px; }
+
+.form__button {
+  width: 100%;
+  background-color: #50b930;
+  color: #ffffff;
+  font-weight: bold; }
+
+.form__select {
+  font-size: 14px;
+  opacity: 0;
+  transition: 0.4s; }
+
+.form__input--full.form-control {
+  width: 100%; }
+
+.form__prompt.alert-info {
+  color: #989898;
+  font-size: 14px;
+  background-color: #ededed;
+  border: 1px solid #dddddd; }
+
+.form__pipe {
+  color: #989898;
+  font-weight: normal; }
+
+.infobox {
+  opacity: 0;
+  transition: 0.4s;
+  clear: both;
+  font-size: 14px; }
+
+.infobox.form-control {
+  height: auto; }
+
+.infobox__image {
+  width: 100%; }
+
+.infobox__image img {
+  height: auto;
+  width: 100%; }
+
+.infobox__imagectrl {
+  clear: both;
+  text-align: center; }
+
+.infobox__button {
+  float: left;
+  background-color: #336eb2;
+  color: #ededed; }
+
+.infobox__button:last-of-type {
+  float: right; }
+
+.infobox__counter {
+  display: inline;
+  line-height: 32px;
+  color: #989898;
+  font-size: 12px; }

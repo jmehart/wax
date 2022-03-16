@@ -1,23 +1,32 @@
 // Sass configuration
 var gulp = require('gulp');
+var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass')(require('sass'));
+var jshint 		= require('gulp-jshint');
 
-gulp.task('sass', function(cb) {
-  gulp
-    .src('*.scss')
-    .pipe(sass())
-    .pipe(
-      gulp.dest(function(f) {
-        return f.base;
-      })
-    );
-  cb();
+// Static Server + watching scss/html files
+gulp.task('serve', ['sass'], function() {
+  browserSync.init({
+      server: "./app"
+  });
+
+  gulp.watch("app/scss/*.scss", ['sass']);
+  gulp.watch("app/js/*.js", ['jshint']);
+  gulp.watch("app/*.*").on('change', browserSync.reload);
 });
 
-gulp.task(
-  'default',
-  gulp.series('sass', function(cb) {
-    gulp.watch('*.scss', gulp.series('sass'));
-    cb();
-  })
-);
+// Compile sass into CSS & auto-inject into browsers
+gulp.task('sass', function() {
+  return gulp.src("app/scss/*.scss")
+      .pipe(sass())
+      .pipe(gulp.dest("app/css"))
+      .pipe(browserSync.stream())
+});
+
+gulp.task('default', ['serve']);
+
+gulp.task('jshint', function() {
+return gulp.src('app/js/*.js')
+  .pipe(jshint())
+  .pipe(jshint.reporter('jshint-stylish'));
+});

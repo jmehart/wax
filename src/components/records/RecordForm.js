@@ -36,7 +36,7 @@ export const RecordForm = () => {
     //ACCESS GENRE ARRAY STATE TO HAVE DROPDOWN FOR ALL GENRES
     const [genreChoices, setGenreChoice] = useState([]);
 
-    //FETCH CALL TO ACCESS GENRES AND SET A GENRE CHOISE
+    //FETCH CALL TO ACCESS GENRES AND SET A GENRE CHOICE
     useEffect(() => {
         fetch("http://localhost:8088/genres")
             .then((res) => res.json())
@@ -175,7 +175,7 @@ export const RecordForm = () => {
                 <fieldset>
                     <div className="form-group">
                         <label className="genreLabel" htmlFor="genre">Genre</label>
-                        <select onChange={
+                        <select className="genreDrop" onChange={
                             (evt) => {
                                 const copy = { ...form }
                                 copy.genreId = parseInt(evt.target.value)

@@ -33,7 +33,7 @@
 
 .slidemenu label:hover{
   cursor: pointer;
-  color: #666;
+  color: rgb(102, 102, 102);
 }
 
 .slidemenu label span{

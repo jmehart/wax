@@ -1,11 +1,17 @@
 @import "../../Wax.css";
 
-.link {
-  text-decoration: none;
-  color: var(--main-font-colour);
-  font-size: 1.5vw;
+.searchBtn {
+padding-bottom: 20px;
+padding-top: 5px;
+
 }
 
-.artist {
-  padding-bottom: 2em;;
+.crateBtn {
+  padding: .75em;
+
+}
+
+.btn {
+padding: 5px;
+display: inline-flex;
 }

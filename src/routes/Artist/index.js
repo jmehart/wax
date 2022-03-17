@@ -67,7 +67,7 @@ export class Artist extends Component {
       sort: "title",
       sort_order
     };
-    const uri = `/artist?${stringify(query)}`;
+    const uri = `/release?${stringify(query)}`;
 
     window.location.replace(uri);
   };

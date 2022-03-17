@@ -1,24 +1,25 @@
 
-//import { stringify } from "qs";
+import { stringify } from "qs";
 
 import { config } from "./config";
 
 /**
  * get the releases for the associated artist to the id
- * @param {String} releaseId
- 
+ * @param {String} artistId
+ * @param {String} sort year | title | format
+ * @param {String} sort_order asc | desc
  */
-
-///releases/{release_id}{?curr_abbr}
-
- //const token = "eneTroyZTJqkInHoaoQsaDRyOHMQXqQHzeeylAgr";
-
-export const getArtistReleases = async (releaseId) => {
+export const getArtistReleases = async (artistId, sort, sort_order) => {
   const { consumerKey, secretKey, baseUri } = config;
 
+  const query = {
+    sort,
+    sort_order,
+    pages: 1,
+    per_page: 100
+  };
 
-
-  const uri = `${baseUri}/releases/${releaseId}`;
+  const uri = `${baseUri}/artists/${artistId}/releases?${stringify(query)}`;
   const headers = new Headers({
     Authorization: `Discogs key=${consumerKey}, secret=${secretKey}`
   });

@@ -32,7 +32,6 @@ export class Artist extends Component {
 
     console.log(releases);
     this.setState({
-      releases: [...releases]
     });
   }
 

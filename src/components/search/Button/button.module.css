@@ -1,0 +1,19 @@
+@import "../../Wax.css";
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  border: 0.3vw solid var(--primary-colour);
+  border-radius: 25%;
+
+
+
+  margin-right: 3vw;
+  padding: 1.5vw;
+
+  text-align: center;
+}
+
+.highlight {
+  border: 0.3vw solid var(--main-highlight-colour);
+}

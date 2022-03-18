@@ -1,0 +1,17 @@
+@import "../../Wax.css";
+
+.searchBtn {
+padding-bottom: 20px;
+padding-top: 5px;
+
+}
+
+.crateBtn {
+  padding: .75em;
+
+}
+
+.btn {
+padding: 5px;
+display: inline-flex;
+}

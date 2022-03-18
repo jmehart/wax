@@ -1,0 +1,18 @@
+.item {
+    width: 20%;
+    height: 15vw;
+    display: inline-block;
+  }
+  
+  .image {
+    margin-bottom: 0.5vw;
+  }
+  
+  .title {
+    white-space: break-spaces;
+    margin-bottom: 0.5vw;
+  }
+  
+  .year {
+    opacity: 0.6;
+  }

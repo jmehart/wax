@@ -1,0 +1,39 @@
+@import "../../Wax.css";
+
+.container {
+  width: 100%;
+  text-align: center;
+  margin-top: 5vw;
+}
+
+.input {
+  width: 66%;
+  height: 5vw;
+
+  padding: 0.2vw 0.781vw;
+
+  
+
+  font-weight: var(--main-font-weight);
+  font-size: var(--main-font-size);
+  color: var(--main-font-colour);
+
+  font-weight: 600;
+  font-size: 1.25vw;
+  letter-spacing: 0.1vw;
+  line-height: 1.146vw;
+  color: var(--main-font-colour);
+  text-align: center;
+
+  border: 0.2vw solid var(--input-border-colour);
+  box-sizing: border-box;
+
+  outline-style: none;
+
+  transition: border 0.3s;
+}
+
+.input:focus {
+  border: 0.1vw solid var(--primary-colour);
+}
+

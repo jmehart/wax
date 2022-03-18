@@ -3,14 +3,18 @@
     justify-content: center;
     background-image: url("/Users/jaimiehart/workspace/client-capstone/wax/src/images/homeBackground.jpg");
     background-size: cover;
-	max-width: 900px; 
+	max-width: 1000px; 
 	margin: 0 auto !important; 
 	float: none !important; 
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 .genreLabel {
     padding-right: 10px;
+}
+
+.genreDrop {
+    padding: 5px;
 }
 
 .radioLabel {
@@ -18,13 +22,13 @@
 }
 
 .btn-add {
-    padding: 5px 10px;
+    padding: 10px 20px;
 }
 
 .addBtn {
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+
     margin-bottom: 30px;
 }
 

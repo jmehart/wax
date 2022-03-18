@@ -13,7 +13,7 @@ export const Record = () => {
                     setRecord(recordData)
                 })
         },
-        [recordId]  // Above function runs when the value of ticketId change
+        [recordId]  // Above function runs when the value of recordId change
     )
 
     //      {record.releaseDate.length > 0 && }

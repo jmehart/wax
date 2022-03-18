@@ -11,65 +11,28 @@ export class Artist extends Component {
   constructor(props) {
     super(props);
 
-    const { id, sort, sort_order } = parse(window.location.search, {
+    const { id } = parse(window.location.search, {
       ignoreQueryPrefix: true
     });
 
     this.state = {
-      artistId: id,
-      sort,
-      sort_order: sort_order || "desc", // if no sort_order, default to desc
-      releases: []
+      releaseId: id,
+      release: {}
     };
 
-    this.sortByDate = this.sortByDate.bind(this);
-    this.sortByTitle = this.sortByTitle.bind(this);
   }
 
   async componentDidMount() {
-    const { artistId, sort, sort_order } = this.state;
-    const { releases } = await getArtistReleases(artistId, sort, sort_order);
+    const { releaseId } = this.state;
+    const releases = await getArtistReleases(releaseId);
 
     console.log(releases);
     this.setState({
+      release: releases
     });
   }
 
-  sortByDate = () => {
-    const { artistId, sort } = this.state;
-    let { sort_order } = this.state;
-
-    if (sort === "year") {
-      sort_order = sort_order === "desc" ? "asc" : "desc";
-    }
-
-    const query = {
-      id: artistId,
-      sort: "year",
-      sort_order
-    };
-    const uri = `/artist?${stringify(query)}`;
-
-    window.location.replace(uri);
-  };
-
-  sortByTitle = () => {
-    const { artistId, sort } = this.state;
-    let { sort_order } = this.state;
-
-    if (sort === "title") {
-      sort_order = sort_order === "desc" ? "asc" : "desc";
-    }
-
-    const query = {
-      id: artistId,
-      sort: "title",
-      sort_order
-    };
-    const uri = `/release?${stringify(query)}`;
-
-    window.location.replace(uri);
-  };
+  
 
   goBack = () => {
     window.history.back();
@@ -82,11 +45,10 @@ export class Artist extends Component {
           <Button onClick={this.goBack} highlight>
             Go Back
           </Button>
-          <Button onClick={this.sortByDate}>Sort by Date</Button>
-          <Button onClick={this.sortByTitle}>Sort by Title</Button>
+          
         </div>
         <div className={styles.list}>
-          <ReleaseList releases={this.state.releases} />
+          <ReleaseList release={this.state.release} />
         </div>
       </div>
     );

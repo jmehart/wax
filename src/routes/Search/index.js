@@ -11,7 +11,7 @@ export class Search extends Component {
     super(props);
     this.state = {
       query: "",
-      artistList: {}
+      artistList: []
     };
 
     this.onKeyUp = this.onKeyUp.bind(this);
@@ -68,7 +68,7 @@ export class Search extends Component {
 
 
       const releaseFetchArray = this.state.artistList.map(result => {
-        const [, , , releaseId] = result.uri.split("/")
+        const [,,, releaseId] = result.uri.split("/")
         return fetch(`https://api.discogs.com/releases/${releaseId}`)
           .then((res) => res.json())
       })

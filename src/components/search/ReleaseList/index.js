@@ -15,7 +15,7 @@ export const ReleaseList = ({ release }) => {
         setRecords(recordData)
       });
   }, []);
-  /*
+
 //ACCESS GENRE ARRAY STATE TO HAVE DROPDOWN FOR ALL GENRES
     const [genreChoices, setGenreChoice] = useState([]);
 
@@ -28,13 +28,17 @@ export const ReleaseList = ({ release }) => {
             });
     }, []);
 
-    {genreChoices.map((genreObject) => {
-      return <option key={`${genreObject.id}`} value={genreObject.id}>{genreObject.genre}</option>
+   const genreMatch = genreChoices.find((genreObject) => {
+     if (release.genres?.[0] === genreObject.genre)  {
+       return genreObject.id
+   }
+  })
+   //   return <option key={`${genreObject.id}`} value={genreObject.id}>{genreObject.genre}</option>
 
 
-    IF GENRE.GENRE === release.genres?.[0]
-    GET GENRE.ID AND POST IN NEWRECORD OBJECT BELOW FOR GENREID PROPERTY
-  */
+   // IF GENRE.GENRE === release.genres?.[0]
+    //GET GENRE.ID AND POST IN NEWRECORD OBJECT BELOW FOR GENREID PROPERTY
+  
 
   const [destination, updateDestination] = useState("")
 
@@ -48,7 +52,7 @@ export const ReleaseList = ({ release }) => {
     const newRecord = {
       album: release.title,
       artist: release.artists_sort,
-      genreId: "",
+      genreId: genreMatch.id,
       value: release.lowest_price,
       releaseDate: release.released_formatted,
       catalogNumber: release.labels?.[0].catno,

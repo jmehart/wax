@@ -16,16 +16,24 @@ export const ReleaseList = ({ release }) => {
       });
   }, []);
   /*
-    const [recordObj, updateRecordObj] = useState({
-      album: "",
-      artist: "",
-      genreId: "",
-      value: "",
-      releaseDate: "",
-      catalogNumber: "",
-      albumCover: "",
-      rating: ""
-  });
+//ACCESS GENRE ARRAY STATE TO HAVE DROPDOWN FOR ALL GENRES
+    const [genreChoices, setGenreChoice] = useState([]);
+
+    //FETCH CALL TO ACCESS GENRES AND SET A GENRE CHOICE
+    useEffect(() => {
+        fetch("http://localhost:8088/genres")
+            .then((res) => res.json())
+            .then((genres) => {
+                setGenreChoice(genres)
+            });
+    }, []);
+
+    {genreChoices.map((genreObject) => {
+      return <option key={`${genreObject.id}`} value={genreObject.id}>{genreObject.genre}</option>
+
+
+    IF GENRE.GENRE === release.genres?.[0]
+    GET GENRE.ID AND POST IN NEWRECORD OBJECT BELOW FOR GENREID PROPERTY
   */
 
   const [destination, updateDestination] = useState("")

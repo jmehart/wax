@@ -35,12 +35,10 @@ export const CrateList = () => {
     const history = useHistory()
 
     const deleteRecordInCrate = (id) => {
-        fetch(`http://localhost:8088/crate/${id}`, {
+        return fetch(`http://localhost:8088/crate/${id}`, {
             method: "DELETE"
         })
-            .then(() => {
-                history.go("/crate")
-            })
+
     }
 
 
@@ -64,11 +62,6 @@ export const CrateList = () => {
         } 
         return fetch("http://localhost:8088/collection", fetchCrateCollect)
             .then(response => response.json())
-            .then(() => {
-
-                history.go("/crate")
-
-            })
 
     }
 
@@ -100,9 +93,22 @@ export const CrateList = () => {
                                         id={crateObject.recordId}
                                             onClick={
                                                 (event) => {
-                                                    event.preventDefault()
+                                                    
                                                     moveToCollection(event.target.id)
-                                                    deleteRecordInCrate(crateObject.id)
+                                                    
+                                                    .then(() => {
+
+                                                        return deleteRecordInCrate(crateObject.id)
+                                                    })
+                                                    .then(() => {
+                                                        return fetch(`http://localhost:8088/crate?_expand=record&expand=user&_sort=recordId`)
+                                                        .then(res => res.json())
+                                                        .then((crateArray) => {
+                                                            //you can not directly modify state in React - you always have to use the function that it provided you in useState
+                                                            //arguement is what you want the state to be
+                                                            setCrate(crateArray)
+                                                        })
+                                                    })
                                                 }}>
                                             Move to Collection
                                         </button>

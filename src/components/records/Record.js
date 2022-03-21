@@ -37,7 +37,7 @@ export const Record = () => {
                             <p>Genre: <b>{record.genre?.genre}</b></p>
 
                             {record.value &&
-                                <p>Value: <b>{record.value}</b></p>
+                                <p>Value: <b>${record.value} +</b></p>
                             }
 
                             {record.releaseDate &&

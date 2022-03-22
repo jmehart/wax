@@ -41,7 +41,27 @@ Page button and a Logout button. The body of the Search page has a search bar to
 
 <hr>
 
-<div style="padding:67.41% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/691108899?h=c081baab61&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Wax App"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+
+https://user-images.githubusercontent.com/96555058/159568575-4c985fe1-a643-4eba-8bb7-6bb175fe4141.mov
+
+
+https://user-images.githubusercontent.com/96555058/159569101-a863f9ea-452c-421d-a490-6af93a7f2eee.mov
+
+
+https://user-images.githubusercontent.com/96555058/159569136-7fc3910c-696b-45d8-9aad-ef83371a102c.mov
+
+
+https://user-images.githubusercontent.com/96555058/159569751-b8f153c3-80c5-4ae8-b1dd-8223c9633764.mov
+
+
+https://user-images.githubusercontent.com/96555058/159570051-3c3f2b13-8982-4cb1-83c7-9527664386e3.mov
+
+
+https://user-images.githubusercontent.com/96555058/159569464-3555e4e9-6e9f-4670-a582-45e6ed4500fa.mov
+
+
+
 
 
 <hr>

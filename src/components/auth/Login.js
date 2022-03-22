@@ -39,6 +39,8 @@ export const Login = () => {
             })
     }
 
+
+
     //RENDER HTML FOR LOGIN FORM
     //STARTS WITH MODAL POP UP INFO
     //THEN SIGN IN SECTION
@@ -53,7 +55,9 @@ export const Login = () => {
             </dialog>
 
             <section>
-                <form className="form--login" onSubmit={handleLogin}>
+                <form className="form--login" onKeyDown={e => { if (e.keyCode === 13) {
+          this.handleLogin(); }
+                 }} onSubmit={handleLogin}>
                     <h1 className="loginTitle">Wax</h1>
                     <h2>Please sign in</h2>
                     <fieldset>

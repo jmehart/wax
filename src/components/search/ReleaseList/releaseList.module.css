@@ -1,18 +1,24 @@
-.item {
-    width: 20%;
-    height: 15vw;
-    display: inline-block;
-  }
-  
-  .image {
-    margin-bottom: 0.5vw;
-  }
-  
-  .title {
-    white-space: break-spaces;
-    margin-bottom: 0.5vw;
-  }
-  
-  .year {
-    opacity: 0.6;
-  }
+
+
+  .release {
+    background-image: url("/Users/jaimiehart/workspace/client-capstone/wax/src/images/istockphoto-503242322-612x612 copy.jpg");
+    background-repeat: no-repeat;
+    background-size: 700px;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 220px;
+    padding-bottom: 200px;
+
+}
+
+.cover {
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+
+
+
+

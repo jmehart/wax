@@ -66,7 +66,10 @@ export const Register = (props) => {
                 <button className="button--close" onClick={e => conflictDialog.current.close()}>Close</button>
             </dialog>
 
-            <form className="form--login" onSubmit={handleRegister}>
+            <form className="form--login" 
+            onKeyDown={e => { if (e.keyCode === 13) {
+                this.handleRegister(); }
+            }} onSubmit={handleRegister}>
                 <h1 className="h3 mb-3 font-weight-normal">Please Register for Wax</h1>
                 <fieldset>
                     <label htmlFor="name"> Full Name </label>
@@ -79,7 +82,7 @@ export const Register = (props) => {
                     <input onChange={updateUser} type="email" id="email" className="form-control" placeholder="Email address" required />
                 </fieldset>
                 <fieldset>
-                    <button type="submit"> Register </button>
+                    <button className="registerBtn" type="submit"> Register </button>
                 </fieldset>
             </form>
             <section className="link--backToLogin">

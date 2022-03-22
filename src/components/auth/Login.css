@@ -75,3 +75,7 @@ fieldset {
 .link--register {
     padding-right: 8em;
 }
+
+.loginBtn {
+    padding: 5px;
+}

@@ -112,6 +112,7 @@ export const ReleaseList = ({ release }) => {
         <div className={styles.style}>Style: <b>{release.styles?.[0]}</b></div>
         <div className={styles.rating}>Average Rating: <b>{release.community?.rating?.average}</b>/5</div>
         <div className={styles.price}>Lowest Selling Price: <b>${release.lowest_price}</b></div>
+       
         <fieldset>
           <div className="form-group">
             <div className="addToButtons">

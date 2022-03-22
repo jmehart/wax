@@ -64,3 +64,7 @@ fieldset {
 .link--backToLogin {
     padding-right: 8em;
 }
+
+.registerBtn {
+    padding: 5px;
+}

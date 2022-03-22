@@ -2,6 +2,7 @@ import React from "react"
 //import thirds party dom "link" that allows us to do routing
 import { Link } from "react-router-dom"
 import "./NavBar.css"
+import "/Users/jaimiehart/workspace/client-capstone/wax/src/images/69524.png"
 
 //Display navbar with href links to files
 //at attribute "to=" it will render a hyperlink in your DOM, and when clicked, it will change the URL in the browser to the value of the to attribute
@@ -17,7 +18,7 @@ export const NavBar = (props) => {
 
             <label htmlFor="slide-item-1">
                 <Link id="nav-item-1" className="navLink" to="/" style={{ textDecoration: 'none' }}>
-                    <p className="icon"><img className="homeIcon" src="https://cdn-icons-png.flaticon.com/512/69/69524.png" /></p>
+                    <p className="icon"><img className="homeIcon" src={require("/Users/jaimiehart/workspace/client-capstone/wax/src/images/69524.png")} /></p>
                     <span>Home</span>
                 </Link>
             </label>
@@ -49,7 +50,7 @@ export const NavBar = (props) => {
                     onClick={() => {
                         localStorage.removeItem("wax_user")
                     }}>
-                    <p className="icon"><img className="logoutIcon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_logOut-ltr.svg/1200px-OOjs_UI_icon_logOut-ltr.svg.png" /></p>
+                    <p className="icon"><img className="logoutIcon" src={require("/Users/jaimiehart/workspace/client-capstone/wax/src/images/1200px-OOjs_UI_icon_logOut-ltr.svg.png")} /></p>
                     <span>Logout</span>
                 </Link>
             </label>

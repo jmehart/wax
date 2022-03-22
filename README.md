@@ -41,7 +41,7 @@ Page button and a Logout button. The body of the Search page has a search bar to
 
 <hr>
 
-![App](https://player.vimeo.com/video/691108899?h=c081baab61&amp;title=0&amp;byline=0&amp;portrait=0&amp;speed=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479)
+https://player.vimeo.com/video/691108899?h=c081baab61&amp;title=0&amp;byline=0&amp;portrait=0&amp;speed=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479
 
 
 <hr>

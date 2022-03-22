@@ -36,12 +36,32 @@ Page button and a Logout button. The body of the Search page has a search bar to
 ## DEVELOPED WITH:
 - [React](https://facebook.github.io/react/)
 - RESTful API and Discogs API
-    <br>Requires an API key and secret from [Discogs](https://www.discogs.com/developers/).
+    <br>Requires an API key and secret from [Discogs](https://www.discogs.com/developers/)
     <br>[Sample json database](https://github.com/jmehart/wax-api)
 
 <hr>
 
-![App](https://vimeo.com/691108899)
+
+
+https://user-images.githubusercontent.com/96555058/159568575-4c985fe1-a643-4eba-8bb7-6bb175fe4141.mov
+
+
+https://user-images.githubusercontent.com/96555058/159569101-a863f9ea-452c-421d-a490-6af93a7f2eee.mov
+
+
+https://user-images.githubusercontent.com/96555058/159569136-7fc3910c-696b-45d8-9aad-ef83371a102c.mov
+
+
+https://user-images.githubusercontent.com/96555058/159569751-b8f153c3-80c5-4ae8-b1dd-8223c9633764.mov
+
+
+https://user-images.githubusercontent.com/96555058/159570051-3c3f2b13-8982-4cb1-83c7-9527664386e3.mov
+
+
+https://user-images.githubusercontent.com/96555058/159569464-3555e4e9-6e9f-4670-a582-45e6ed4500fa.mov
+
+
+
 
 
 <hr>

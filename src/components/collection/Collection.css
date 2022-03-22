@@ -43,3 +43,9 @@ ul {
     padding: 5px;
     background-color: rgba(255, 239, 241, 0.831);
 }
+
+.totalVal {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

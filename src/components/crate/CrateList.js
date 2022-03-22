@@ -29,7 +29,7 @@ export const CrateList = () => {
         []
     )
 
- 
+
 
 
     const history = useHistory()
@@ -47,7 +47,7 @@ export const CrateList = () => {
 
 
 
-       
+
         //create new object for crate or collection based on user
         const crateCollectObject = {
             userId: parseInt(localStorage.getItem("wax_user")),
@@ -59,11 +59,13 @@ export const CrateList = () => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(crateCollectObject)
-        } 
+        }
         return fetch("http://localhost:8088/collection", fetchCrateCollect)
             .then(response => response.json())
 
     }
+
+
 
 
     return (
@@ -71,13 +73,16 @@ export const CrateList = () => {
         <>
             <section className="crateSection">
                 <h1 className="crateTitle">Crate</h1>
+
                 {
+                    
                     //interpolating an html representation that maps through products
                     userCrate.map(
                         //paramater captures each individual product object as it iterates
                         (crateObject) => {
 
                             return <div className="crateContainer" key={`crate--${crateObject.id}`}>
+                                 
                                 <ul className="crateList">
                                     <li key={`crateItem--${crateObject.record.id}`}>
                                         <Link to={`/records/${crateObject.record.id}`}>
@@ -90,25 +95,25 @@ export const CrateList = () => {
                                     </li>
                                     <div className="moveBtn">
                                         <button className="btn-move"
-                                        id={crateObject.recordId}
+                                            id={crateObject.recordId}
                                             onClick={
                                                 (event) => {
-                                                    
-                                                    moveToCollection(event.target.id)
-                                                    
-                                                    .then(() => {
 
-                                                        return deleteRecordInCrate(crateObject.id)
-                                                    })
-                                                    .then(() => {
-                                                        return fetch(`http://localhost:8088/crate?_expand=record&expand=user&_sort=recordId`)
-                                                        .then(res => res.json())
-                                                        .then((crateArray) => {
-                                                            //you can not directly modify state in React - you always have to use the function that it provided you in useState
-                                                            //arguement is what you want the state to be
-                                                            setCrate(crateArray)
+                                                    moveToCollection(event.target.id)
+
+                                                        .then(() => {
+
+                                                            return deleteRecordInCrate(crateObject.id)
                                                         })
-                                                    })
+                                                        .then(() => {
+                                                            return fetch(`http://localhost:8088/crate?_expand=record&expand=user&_sort=recordId`)
+                                                                .then(res => res.json())
+                                                                .then((crateArray) => {
+                                                                    //you can not directly modify state in React - you always have to use the function that it provided you in useState
+                                                                    //arguement is what you want the state to be
+                                                                    setCrate(crateArray)
+                                                                })
+                                                        })
                                                 }}>
                                             Move to Collection
                                         </button>

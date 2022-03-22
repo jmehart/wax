@@ -40,20 +40,26 @@ export const CollectionList = () => {
             })
     }
 
-
+    const totalValue = (userCollection.reduce((a, b) => +a + +b.record.value, 0))
+    var wholeTotalValue=parseFloat(totalValue).toFixed(2);
 
     return (
         //fragment to put children under single component
         <>
             <section className="collectionSection">
                 <h1 className="collectionTitle">Collection</h1>
+                <div className="totalVal">The total value of your record collection is at least:  
+                <p><b>${wholeTotalValue}</b></p></div>
+                
                 {
                     //interpolating an html representation that maps through products
                     userCollection.map(
                         //paramater captures each individual product object as it iteollections
                         (collectionObject) => {
+                            
 
                             return <div className="collectionContainer" key={`collection--${collectionObject.id}`}>
+                                
                                 <ul className="collectionList">
                                     <li key={`collectionItem--${collectionObject.record.id}`}>
                                     <Link to={`/records/${collectionObject.record.id}`}>

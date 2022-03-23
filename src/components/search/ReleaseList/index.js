@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom"
+import Carousel from 'react-elastic-carousel';
 
 import { List } from "../List";
 
@@ -8,6 +9,7 @@ import styles from "./releaseList.module.css";
 export const ReleaseList = ({ release }) => {
 
   const [records, setRecords] = useState([])
+  const [videoLinks, setVideoLinks] = useState([])
   useEffect(() => {
     fetch("http://localhost:8088/records")
       .then((res) => res.json())
@@ -16,29 +18,45 @@ export const ReleaseList = ({ release }) => {
       });
   }, []);
 
-//ACCESS GENRE ARRAY STATE TO HAVE DROPDOWN FOR ALL GENRES
-    const [genreChoices, setGenreChoice] = useState([]);
+  useEffect(() => {
+    //SPLIT VIDEO TO ALLOW YOUTUBE EMBED 
 
-    //FETCH CALL TO ACCESS GENRES AND SET A GENRE CHOICE
-    useEffect(() => {
-        fetch("http://localhost:8088/genres")
-            .then((res) => res.json())
-            .then((genres) => {
-                setGenreChoice(genres)
-            });
-    }, []);
+    if (release.videos) {
+      let copy = [...videoLinks]
+      for (const video of release.videos) {
+        const file = video.uri
+        let [a, filename] = file.split("watch?v=")
+        copy.push("http://www.youtube.com/embed/" + filename)
 
-   const genreMatch = genreChoices.find((genreObject) => {
-     if (release.genres?.[0] === genreObject.genre)  {
-       return genreObject.id
-   }
+      }
+      setVideoLinks(copy)
+    }
+
+  }, [release]);
+
+  //ACCESS GENRE ARRAY STATE TO HAVE DROPDOWN FOR ALL GENRES
+  const [genreChoices, setGenreChoice] = useState([]);
+
+  //FETCH CALL TO ACCESS GENRES AND SET A GENRE CHOICE
+  useEffect(() => {
+    fetch("http://localhost:8088/genres")
+      .then((res) => res.json())
+      .then((genres) => {
+        setGenreChoice(genres)
+      });
+  }, []);
+
+  const genreMatch = genreChoices.find((genreObject) => {
+    if (release.genres?.[0] === genreObject.genre) {
+      return genreObject.id
+    }
   })
-   //   return <option key={`${genreObject.id}`} value={genreObject.id}>{genreObject.genre}</option>
+  //   return <option key={`${genreObject.id}`} value={genreObject.id}>{genreObject.genre}</option>
 
 
-   // IF GENRE.GENRE === release.genres?.[0]
-    //GET GENRE.ID AND POST IN NEWRECORD OBJECT BELOW FOR GENREID PROPERTY
-  
+  // IF GENRE.GENRE === release.genres?.[0]
+  //GET GENRE.ID AND POST IN NEWRECORD OBJECT BELOW FOR GENREID PROPERTY
+
 
   const [destination, updateDestination] = useState("")
 
@@ -97,6 +115,13 @@ export const ReleaseList = ({ release }) => {
   }
 
 
+
+
+
+
+
+
+
   return (
     <>
       <div className={styles.release}>
@@ -105,6 +130,7 @@ export const ReleaseList = ({ release }) => {
         <div className={styles.artist}>Artist: <b>{release.artists_sort}</b></div>
         <div className={styles.catNo}>Catalog #: <b>{release.labels?.[0].catno}</b></div>
         <img className="cover" alt="albumCover" src={release.thumb} />
+        <div className={styles.format}>Format: <b>{release.formats?.[0].descriptions + ""}</b></div>
         <div className={styles.releaseDate}>Released: <b>{release.released_formatted}</b></div>
         <div className={styles.country}>Country: <b>{release.country}</b></div>
         <div className={styles.label}>Label: <b>{release.labels?.[0].name}</b></div>
@@ -112,7 +138,7 @@ export const ReleaseList = ({ release }) => {
         <div className={styles.style}>Style: <b>{release.styles?.[0]}</b></div>
         <div className={styles.rating}>Average Rating: <b>{release.community?.rating?.average}</b>/5</div>
         <div className={styles.price}>Lowest Selling Price: <b>${release.lowest_price}</b></div>
-       
+
         <fieldset>
           <div className="form-group">
             <div className="addToButtons">
@@ -145,7 +171,14 @@ export const ReleaseList = ({ release }) => {
             Add
           </button>
         </div>
+
       </div>
+      <div className="videoContainer">
+        <Carousel className="carouselVideo" itemsToShow={1}>
+          {videoLinks.map(videoLink => <iframe key={videoLink} width='675' height='400' src={`${videoLink}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>)}
+        </Carousel>
+      </div>
+
     </>
   );
 };

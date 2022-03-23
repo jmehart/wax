@@ -3,6 +3,12 @@ import { useHistory } from "react-router-dom"
 import { Link } from "react-router-dom"
 import "./Collection.css"
 
+
+/*
+THIS MODULE IS RESPONSIBLE FOR LISTING AN HTML REPRESENTATION OF A USER'S COLLECTION
+INCLUDES ARTIST NAME, ALBUM NAME, COVER PHOTO, AND REMOVE BUTTON IN EACH RECORD CONTAINER
+*/
+
 export const CollectionList = () => {
     //declare and deconstruct and array - this is a hook function that defines state
     //const below returns a value and function to accept the value (I'm getting this value and using it for this function's purpose)
@@ -28,9 +34,12 @@ export const CollectionList = () => {
         },
         []
     )
-
+    //HISTORY WILL ALLOW THE USER TO REFRESH THE COLLECTION PAGE    
     const history = useHistory()
-
+    
+    //NEED A DELETE METHOD FETCH TO ACCEPT THE ID OF A RECORD IN THE COLLECTION 
+    //AND REMOVE THE OBJECT STORING RECORDID AND USERID FROM THE COLLECTION ARRAY
+    //NOT DELETING RECORD OBJECT FROM RECORD ARRAY IN CASE I NEED THAT DATA FOR LATER USE
     const deleteRecordInCollection = (id) => {
         fetch(`http://localhost:8088/collection/${id}`, {
             method: "DELETE"
@@ -39,8 +48,10 @@ export const CollectionList = () => {
                 history.go("/collection")
             })
     }
-
+    //TO DISPLAY TOTAL VALUE OF RECORD COLLECTION - CREATE FUNCTION TO ADD SUM OF VALUE PROPERTY
+    //REDUCE METHOD WILL DO THIS
     const totalValue = (userCollection.reduce((a, b) => +a + +b.record.value, 0))
+    //PARSEFLOAT TURNS INTO A A FLOAT NUMBER WITH TWO DECIMAL PLACES
     var wholeTotalValue=parseFloat(totalValue).toFixed(2);
 
     return (

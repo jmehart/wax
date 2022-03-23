@@ -3,7 +3,7 @@
     justify-content: center;
     background-image: url("/Users/jaimiehart/workspace/client-capstone/wax/src/images/homeBackground.jpg");
     background-size: cover;
-	max-width: 1000px; 
+	max-width: 1100px; 
 	margin: 0 auto !important; 
 	float: none !important; 
     padding-top: 20px;
@@ -28,7 +28,6 @@
 .addBtn {
     display: flex;
     justify-content: center;
-
     margin-bottom: 30px;
 }
 
@@ -40,7 +39,7 @@
 .Record {
     background-image: url("/Users/jaimiehart/workspace/client-capstone/wax/src/images/istockphoto-503242322-612x612 copy.jpg");
     background-repeat: no-repeat;
-    background-size: 700px;
+    background-size: 800px;
     background-position: center top;
     display: flex;
     justify-content: center;
@@ -53,5 +52,11 @@
     padding-top: 10px;
 }
 
+.form-group-genre {
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
 
-
+.addTo {
+    padding-bottom: 3em;
+}

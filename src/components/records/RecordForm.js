@@ -171,9 +171,45 @@ export const RecordForm = () => {
                             placeholder="Enter Release Date"
                         />
                     </div>
+                    <div className="form-group">
+                        <label htmlFor="releaseDate">Value</label>
+                        <input
+                            onChange={
+                                (evt) => {
+                                    const copy = { ...form }
+                                    copy.value = evt.target.value
+                                    updateForm(copy)
+                                }
+                            }
+                            required autoFocus
+                            type="number"
+                            min="0"
+                            className="form-control"
+                            placeholder="Enter $ Value"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="releaseDate">Rating</label>
+                        <input
+                            onChange={
+                                (evt) => {
+                                    const copy = { ...form }
+                                    copy.rating = evt.target.value
+                                    updateForm(copy)
+                                }
+                            }
+                            required autoFocus
+                            type="number"
+                            min="0"
+                            max="5"
+                            step="0.10"
+                            className="form-control"
+                            placeholder="Enter Rating"
+                        />
+                    </div>
                 </fieldset>
                 <fieldset>
-                    <div className="form-group">
+                    <div className="form-group-genre">
                         <label className="genreLabel" htmlFor="genre">Genre</label>
                         <select className="genreDrop" onChange={
                             (evt) => {
@@ -207,7 +243,7 @@ export const RecordForm = () => {
                         />
                     </div>
                 </fieldset>
-                <fieldset>
+                <fieldset className="addTo">
                     <div className="form-group">
                     <div className="addToButtons">
                         <label className="radioLabel" htmlFor="addCrate">Add to Crate</label>

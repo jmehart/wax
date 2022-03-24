@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom"
 import Carousel from 'react-elastic-carousel';
 
-import { List } from "../List";
-
 import styles from "./releaseList.module.css";
 
 export const ReleaseList = ({ release }) => {
@@ -75,7 +73,8 @@ export const ReleaseList = ({ release }) => {
       releaseDate: release.released_formatted,
       catalogNumber: release.labels?.[0].catno,
       albumCover: release.thumb,
-      rating: release.community?.rating?.average
+      rating: release.community?.rating?.average,
+      format: release.formats?.[0].descriptions.join("/ ")
     }
     const fetchOption = {
       method: "POST",
@@ -115,9 +114,12 @@ export const ReleaseList = ({ release }) => {
   }
 
 
-
-
-
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 }
+  ];
 
 
 
@@ -130,7 +132,7 @@ export const ReleaseList = ({ release }) => {
         <div className={styles.artist}>Artist: <b>{release.artists_sort}</b></div>
         <div className={styles.catNo}>Catalog #: <b>{release.labels?.[0].catno}</b></div>
         <img className="cover" alt="albumCover" src={release.thumb} />
-        <div className={styles.format}>Format: <b>{release.formats?.[0].descriptions + ""}</b></div>
+        <div className={styles.format}>Format: <b>{release.formats?.[0].descriptions.join("/ ")}</b></div>
         <div className={styles.releaseDate}>Released: <b>{release.released_formatted}</b></div>
         <div className={styles.country}>Country: <b>{release.country}</b></div>
         <div className={styles.label}>Label: <b>{release.labels?.[0].name}</b></div>

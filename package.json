@@ -14,13 +14,17 @@
     "gulp-less": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "react": "^17.0.2",
+    "react-currency-input-field": "^3.6.4",
     "react-dom": "^17.0.2",
     "react-dropzone": "^11.2.4",
+    "react-elastic-carousel": "^0.11.5",
     "react-native-video": "^5.2.0",
     "react-native-webview": "^11.17.2",
     "react-native-youtube": "^2.0.2",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "5.3",
     "react-scripts": "5.0.0",
+    "styled-components": "^5.3.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -34,6 +34,8 @@ export const Record = () => {
                             <img className="cover" alt="albumCover" src={record.albumCover} />
                             <p>Catalog #: <b>{record.catalogNumber}</b></p>
 
+                            <p>Format: <b>{record.format}</b></p>
+
                             <p>Genre: <b>{record.genre?.genre}</b></p>
 
                             {record.value &&

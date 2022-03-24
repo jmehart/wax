@@ -18,7 +18,11 @@
     padding-top: 10px;
 }
 
-
-
-
-
+.rec.rec-dot {
+  background: #ff4343;
+  border: 2px #333 solid;
+  border-radius: 0;
+}
+.rec.rec-dot_active {
+  background: #59fd59;
+}

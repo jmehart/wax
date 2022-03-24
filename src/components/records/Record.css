@@ -3,7 +3,7 @@
     justify-content: center;
     background-image: url("/Users/jaimiehart/workspace/client-capstone/wax/src/images/homeBackground.jpg");
     background-size: cover;
-	max-width: 1100px; 
+	max-width: 1200px; 
 	margin: 0 auto !important; 
 	float: none !important; 
     padding-top: 20px;
@@ -60,3 +60,25 @@
 .addTo {
     padding-bottom: 3em;
 }
+
+.currency-code{
+    position:absolute;
+    left:12px;
+    top:13px;
+    font-size: larger;
+}
+
+.form-group-value {
+    position:relative;
+}
+
+.form-control-value {
+    padding:12px 25px;
+    border:solid 1px #ccc;
+    border-radius:5px;
+    font-size: larger;
+    width: 22.3em;
+}
+
+
+

@@ -132,7 +132,7 @@ export const ReleaseList = ({ release }) => {
         <div className={styles.artist}>Artist: <b>{release.artists_sort}</b></div>
         <div className={styles.catNo}>Catalog #: <b>{release.labels?.[0].catno}</b></div>
         <img className="cover" alt="albumCover" src={release.thumb} />
-        <div className={styles.format}>Format: <b>{release.formats?.[0].descriptions.join("/ ")}</b></div>
+        <div className={styles.format}>Format: <b>{release.formats?.[0].descriptions.join(" / ")}</b></div>
         <div className={styles.releaseDate}>Released: <b>{release.released_formatted}</b></div>
         <div className={styles.country}>Country: <b>{release.country}</b></div>
         <div className={styles.label}>Label: <b>{release.labels?.[0].name}</b></div>

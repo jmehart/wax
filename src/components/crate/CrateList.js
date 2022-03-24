@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useHistory } from "react-router-dom"
+
 import { Link } from "react-router-dom"
 import "./Crate.css"
 
@@ -32,7 +32,7 @@ export const CrateList = () => {
 
 
 
-    const history = useHistory()
+
 
     const deleteRecordInCrate = (id) => {
         return fetch(`http://localhost:8088/crate/${id}`, {

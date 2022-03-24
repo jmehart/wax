@@ -73,11 +73,11 @@
 }
 
 .form-control-value {
-    padding:12px 25px;
+    padding:12px 14px 12px 25px;
     border:solid 1px #ccc;
     border-radius:5px;
     font-size: larger;
-    width: 22.3em;
+    width: 22.9em;
 }
 
 

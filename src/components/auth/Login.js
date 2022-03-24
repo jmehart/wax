@@ -49,10 +49,11 @@ export const Login = () => {
     //INCLUDE LINK TO REGISTER IF NOT A USER YET - LINKS TO /REGISTER PAGE
     return (
         <main className="container--login">
+            <div className="modal">
             <dialog className="dialog dialog--auth" ref={existDialog}>
                 <div>User does not exist</div>
                 <button className="button--close" onClick={e => existDialog.current.close()}>Close</button>
-            </dialog>
+            </dialog></div>
 
             <section>
                 <form className="form--login" onKeyDown={e => { if (e.keyCode === 13) {

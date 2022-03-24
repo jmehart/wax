@@ -135,7 +135,7 @@ export const RecordForm = () => {
                                     updateForm(copy)
                                 }
                             }
-                            required autoFocus
+                            
                             type="text"
                             className="form-control"
                             placeholder="Enter Album Name"
@@ -151,7 +151,7 @@ export const RecordForm = () => {
                                     updateForm(copy)
                                 }
                             }
-                            required autoFocus
+                            
                             type="text"
                             className="form-control"
                             placeholder="Enter Catalog Number"
@@ -167,7 +167,7 @@ export const RecordForm = () => {
                                     updateForm(copy)
                                 }
                             }
-                            required autoFocus
+                            
                             type="text"
                             className="form-control"
                             placeholder="Enter LP, 7 inch, reissue, single, etc."
@@ -183,7 +183,7 @@ export const RecordForm = () => {
                                     updateForm(copy)
                                 }
                             }
-                            required autoFocus
+                            
                             type="text"
                             className="form-control"
                             placeholder="Enter Release Date"
@@ -201,7 +201,7 @@ export const RecordForm = () => {
                                     updateForm(copy)
                                 }
                             }
-                            required autoFocus
+                            
                             type="number"
                             prefix="$"
                             min="0"
@@ -221,7 +221,7 @@ export const RecordForm = () => {
                                     updateForm(copy)
                                 }
                             }
-                            required autoFocus
+                           
                             type="number"
                             min="0"
                             max="5"
@@ -260,7 +260,7 @@ export const RecordForm = () => {
                                     updateForm(copy)
                                 }
                             }
-                            required autoFocus
+                            
                             type="text"
                             className="form-control"
                             placeholder="Enter Image URL"

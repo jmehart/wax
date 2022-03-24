@@ -27,7 +27,8 @@ export const RecordForm = () => {
         releaseDate: "",
         catalogNumber: "",
         albumCover: "",
-        rating: ""
+        rating: "",
+        format: ""
     });
 
     //create destination state variable to allow radio button selection to route to different pages
@@ -59,7 +60,8 @@ export const RecordForm = () => {
             releaseDate: form.releaseDate,
             catalogNumber: form.catalogNumber,
             albumCover: form.albumCover,
-            rating: form.rating
+            rating: form.rating,
+            format: form.format
         }
         const fetchOption = {
             method: "POST",
@@ -156,6 +158,22 @@ export const RecordForm = () => {
                         />
                     </div>
                     <div className="form-group">
+                        <label htmlFor="format">Format</label>
+                        <input
+                            onChange={
+                                (evt) => {
+                                    const copy = { ...form }
+                                    copy.format = evt.target.value
+                                    updateForm(copy)
+                                }
+                            }
+                            required autoFocus
+                            type="text"
+                            className="form-control"
+                            placeholder="Enter LP, 7 inch, reissue, single, etc."
+                        />
+                    </div>
+                    <div className="form-group">
                         <label htmlFor="releaseDate">Release Date</label>
                         <input
                             onChange={
@@ -172,7 +190,9 @@ export const RecordForm = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="releaseDate">Value</label>
+                        <label htmlFor="value">Value</label>
+                        <div className="form-group-value">
+                        <span className="currency-code">$</span>
                         <input
                             onChange={
                                 (evt) => {
@@ -183,13 +203,16 @@ export const RecordForm = () => {
                             }
                             required autoFocus
                             type="number"
+                            prefix="$"
                             min="0"
-                            className="form-control"
-                            placeholder="Enter $ Value"
+                            className="form-control-value"
+                            placeholder="Enter Value"
                         />
                     </div>
+                    </div>
                     <div className="form-group">
-                        <label htmlFor="releaseDate">Rating</label>
+                        <label htmlFor="value">Rating</label>
+                        <div className="form-group-rating"></div>
                         <input
                             onChange={
                                 (evt) => {
@@ -207,6 +230,7 @@ export const RecordForm = () => {
                             placeholder="Enter Rating"
                         />
                     </div>
+                    <div className="form-group-value"></div>
                 </fieldset>
                 <fieldset>
                     <div className="form-group-genre">

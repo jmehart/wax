@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { useHistory } from "react-router-dom"
 
 import { Link } from "react-router-dom"
 import "./Crate.css"
@@ -31,14 +32,16 @@ export const CrateList = () => {
 
 
 
-
+    const history = useHistory()
 
 
     const deleteRecordInCrate = (id) => {
         return fetch(`http://localhost:8088/crate/${id}`, {
             method: "DELETE"
         })
-
+        .then(() => {
+            history.go("/collection")
+        })
     }
 
 
@@ -66,18 +69,43 @@ export const CrateList = () => {
     }
 
 
-
+    //set up search feature and state
+    const [searchInput, setSearchInput] = useState("")
 
     return (
         //fragment to put children under single component
         <>
             <section className="crateSection">
                 <h1 className="crateTitle">Crate</h1>
-
+                <fieldset>
+                    <div className="search-form-group">
+                        <h3>Search Your Crate</h3>
+                        <input
+                            autoFocus
+                            type="text"
+                            className="search-control"
+                            placeholder="Artist, album, year, format..."
+                            key="recipe-search"
+                            value={searchInput}
+                            onChange={(evt) => {
+                                setSearchInput(evt.target.value)
+                            }} />
+                    </div>
+                </fieldset>
                 {
-                    
-                    //interpolating an html representation that maps through products
-                    userCrate.map(
+                    userCrate.filter(crateObject => {
+                        if (searchInput === "") {
+                            return crateObject;
+                        } else if (crateObject.record.artist.toLowerCase().includes(searchInput.toLowerCase())) {
+                            return crateObject;
+                        } else if (crateObject.record.album.toLowerCase().includes(searchInput.toLowerCase())) {
+                            return crateObject;
+                        } else if (crateObject.record.releaseDate.toLowerCase().includes(searchInput.toLowerCase())) {
+                            return crateObject;
+                        } else if (crateObject.record.format.toLowerCase().includes(searchInput.toLowerCase())) {
+                            return crateObject;
+                        } 
+                    }).map(
                         //paramater captures each individual product object as it iterates
                         (crateObject) => {
 

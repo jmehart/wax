@@ -23,11 +23,11 @@ export const RecordForm = () => {
         album: "",
         artist: "",
         genreId: "",
-        value: "",
+        value: 0,
         releaseDate: "",
         catalogNumber: "",
         albumCover: "",
-        rating: "",
+        rating: 0,
         format: ""
     });
 
@@ -56,11 +56,11 @@ export const RecordForm = () => {
             album: form.album,
             artist: form.artist,
             genreId: form.genreId,
-            value: form.value,
+            value: parseFloat(form.value),
             releaseDate: form.releaseDate,
             catalogNumber: form.catalogNumber,
             albumCover: form.albumCover,
-            rating: form.rating,
+            rating: parseFloat(form.rating),
             format: form.format
         }
         const fetchOption = {

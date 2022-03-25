@@ -49,3 +49,13 @@ ul {
     flex-direction: column;
     text-align: center;
 }
+
+.search-form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-left: 13em;
+    padding-right: 13em;
+    padding-top: 2em;
+}

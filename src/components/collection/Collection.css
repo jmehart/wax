@@ -51,11 +51,20 @@ ul {
 }
 
 .search-form-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     text-align: center;
-    padding-left: 13em;
-    padding-right: 13em;
-    padding-top: 2em;
+    margin-top: 1vw;
 }
+
+.search-control {
+    border: 0.2vw solid var(--input-border-colour);
+    box-sizing: border-box;
+    padding: 5px;
+    outline-style: none;
+    transition: border 0.3s;
+    width: 400px;
+    text-align: center;
+}
+
+.search-control:focus {
+    border: 0.1vw solid var(--primary-colour);
+  }

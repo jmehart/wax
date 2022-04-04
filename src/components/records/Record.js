@@ -7,7 +7,7 @@ export const Record = () => {
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/records/${recordId}?_expand=genre`)
+            fetch(`https://wax-api-bcskd.ondigitalocean.app/records/${recordId}?_expand=genre`)
                 .then(res => res.json())
                 .then((recordData) => {
                     setRecord(recordData)

@@ -14,6 +14,7 @@ export const CollectionList = (props) => {
     //const below returns a value and function to accept the value (I'm getting this value and using it for this function's purpose)
     //useState takes a single arguement - the array input below
     const [collection, setCollection] = useState([])
+    const [record, setRecord] = useState([])
 
     const userCollection = collection.filter((collectionObject) => collectionObject.userId === parseInt(localStorage.getItem("wax_user")));
     //useState returns an array
@@ -24,17 +25,25 @@ export const CollectionList = (props) => {
         //get data from API and pull it into application state of products
         () => {
             //collection links to recordId and userId
-            fetch(`http://localhost:8088/collection?_expand=record&expand=user&_sort=recordId`)
+            fetch(`https://wax-api-bcskd.ondigitalocean.app/collection?_expand=record&expand=user&_sort=recordId`)
                 .then(res => res.json())
                 .then((collectionArray) => {
                     //you can not directly modify state in React - you always have to use the function that it provided you in useState
                     //arguement is what you want the state to be
                     setCollection(collectionArray)
                 })
+                .then (
+                    fetch(`https://wax-api-bcskd.ondigitalocean.app/records?_expand=genre`)
+                    .then(res => res.json())
+                    .then((recordData) => {
+                        setRecord(recordData)
+                    })
+                )
         },
         []
     )
 
+    const foundGenre = record.filter((recordObject) => recordObject.genre?.id);
 
 
     //HISTORY WILL ALLOW THE USER TO REFRESH THE COLLECTION PAGE    
@@ -44,7 +53,7 @@ export const CollectionList = (props) => {
     //AND REMOVE THE OBJECT STORING RECORDID AND USERID FROM THE COLLECTION ARRAY
     //NOT DELETING RECORD OBJECT FROM RECORD ARRAY IN CASE I NEED THAT DATA FOR LATER USE
     const deleteRecordInCollection = (id) => {
-        fetch(`http://localhost:8088/collection/${id}`, {
+        fetch(`https://wax-api-bcskd.ondigitalocean.app/collection/${id}`, {
             method: "DELETE"
         })
             .then(() => {

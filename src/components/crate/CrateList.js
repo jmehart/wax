@@ -19,7 +19,7 @@ export const CrateList = () => {
         //get data from API and pull it into application state of products
         () => {
             //crate links to recordId and userId
-            fetch(`http://localhost:8088/crate?_expand=record&expand=user&_sort=recordId`)
+            fetch(`https://wax-api-bcskd.ondigitalocean.app/crate?_expand=record&expand=user&_sort=recordId`)
                 .then(res => res.json())
                 .then((crateArray) => {
                     //you can not directly modify state in React - you always have to use the function that it provided you in useState
@@ -36,7 +36,7 @@ export const CrateList = () => {
 
 
     const deleteRecordInCrate = (id) => {
-        return fetch(`http://localhost:8088/crate/${id}`, {
+        return fetch(`https://wax-api-bcskd.ondigitalocean.app/crate/${id}`, {
             method: "DELETE"
         })
         .then(() => {
@@ -63,7 +63,7 @@ export const CrateList = () => {
             },
             body: JSON.stringify(crateCollectObject)
         }
-        return fetch("http://localhost:8088/collection", fetchCrateCollect)
+        return fetch("https://wax-api-bcskd.ondigitalocean.app/collection", fetchCrateCollect)
             .then(response => response.json())
 
     }
@@ -134,7 +134,7 @@ export const CrateList = () => {
                                                             return deleteRecordInCrate(crateObject.id)
                                                         })
                                                         .then(() => {
-                                                            return fetch(`http://localhost:8088/crate?_expand=record&expand=user&_sort=recordId`)
+                                                            return fetch(`https://wax-api-bcskd.ondigitalocean.app/crate?_expand=record&expand=user&_sort=recordId`)
                                                                 .then(res => res.json())
                                                                 .then((crateArray) => {
                                                                     //you can not directly modify state in React - you always have to use the function that it provided you in useState

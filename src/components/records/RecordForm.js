@@ -11,7 +11,7 @@ ADDS RECORD TO RECORDS ARRAY IN API AND SHOULD ALSO ADD TO CRATE OR COLLECTION A
 export const RecordForm = () => {
     const [records, setRecords] = useState([])
     useEffect(() => {
-        fetch("http://localhost:8088/records")
+        fetch("https://wax-api-bcskd.ondigitalocean.app/records")
             .then((res) => res.json())
             .then((recordData) => {
                 setRecords(recordData)
@@ -39,7 +39,7 @@ export const RecordForm = () => {
 
     //FETCH CALL TO ACCESS GENRES AND SET A GENRE CHOICE
     useEffect(() => {
-        fetch("http://localhost:8088/genres")
+        fetch("https://wax-api-bcskd.ondigitalocean.app/genres")
             .then((res) => res.json())
             .then((genres) => {
                 setGenreChoice(genres)
@@ -82,17 +82,17 @@ export const RecordForm = () => {
             },
             body: JSON.stringify(crateCollectObject)
         } //FETCH RECORDS FROM API
-        return fetch("http://localhost:8088/records", fetchOption)
+        return fetch("https://wax-api-bcskd.ondigitalocean.app/records", fetchOption)
             .then(response => response.json())
             .then(() => {
                 //conditional to update destination state variable to route to certain pages
                 if (destination === "crate") {
                     history.go("/")
-                    return fetch("http://localhost:8088/crate", fetchCrateCollect)
+                    return fetch("https://wax-api-bcskd.ondigitalocean.app/crate", fetchCrateCollect)
                         .then(response => response.json())
                 } else if (destination === "collection") {
                     history.go("/")
-                    return fetch("http://localhost:8088/collection", fetchCrateCollect)
+                    return fetch("https://wax-api-bcskd.ondigitalocean.app/collection", fetchCrateCollect)
                         .then(response => response.json())
                 }
 
@@ -227,7 +227,7 @@ export const RecordForm = () => {
                             max="5"
                             step="0.10"
                             className="form-control"
-                            placeholder="Enter Rating"
+                            placeholder="Enter Rating (0-5)"
                         />
                     </div>
                     <div className="form-group-value"></div>

@@ -9,7 +9,7 @@ export const ReleaseList = ({ release }) => {
   const [records, setRecords] = useState([])
   const [videoLinks, setVideoLinks] = useState([])
   useEffect(() => {
-    fetch("http://localhost:8088/records")
+    fetch("https://wax-api-bcskd.ondigitalocean.app/records")
       .then((res) => res.json())
       .then((recordData) => {
         setRecords(recordData)
@@ -37,7 +37,7 @@ export const ReleaseList = ({ release }) => {
 
   //FETCH CALL TO ACCESS GENRES AND SET A GENRE CHOICE
   useEffect(() => {
-    fetch("http://localhost:8088/genres")
+    fetch("https://wax-api-bcskd.ondigitalocean.app/genres")
       .then((res) => res.json())
       .then((genres) => {
         setGenreChoice(genres)
@@ -95,17 +95,17 @@ export const ReleaseList = ({ release }) => {
       },
       body: JSON.stringify(crateCollectObject)
     } //FETCH RECORDS FROM API
-    return fetch("http://localhost:8088/records", fetchOption)
+    return fetch("https://wax-api-bcskd.ondigitalocean.app/records", fetchOption)
       .then(response => response.json())
       .then(() => {
         //conditional to update destination state variable to route to certain pages
         if (destination === "crate") {
           history.go("/")
-          return fetch("http://localhost:8088/crate", fetchCrateCollect)
+          return fetch("https://wax-api-bcskd.ondigitalocean.app/crate", fetchCrateCollect)
             .then(response => response.json())
         } else if (destination === "collection") {
           history.go("/")
-          return fetch("http://localhost:8088/collection", fetchCrateCollect)
+          return fetch("https://wax-api-bcskd.ondigitalocean.app/collection", fetchCrateCollect)
             .then(response => response.json())
         }
 

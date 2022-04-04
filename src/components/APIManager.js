@@ -1,6 +1,6 @@
 
 //local API URL to access database
-const API = "http://localhost:8088"
+const API = "https://wax-api-bcskd.ondigitalocean.app"
 
 //create fetch calls to gets users for login & registration and local & session storage
 export const getAllUsers= () => {
@@ -20,7 +20,7 @@ export const existingUserInfo = (user) => {
 
 
 export const sendNewUser = (user) => {
-   return fetch("http://localhost:8088/users", {
+   return fetch("https://wax-api-bcskd.ondigitalocean.app/users", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"

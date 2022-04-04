@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { parse, stringify } from "qs";
 
-import { getArtistReleases } from "../../API";
+import { getArtistReleases } from "/Users/jaimiehart/workspace/client-capstone/wax/src/API/getArtistReleases.js";
 
 import { Button, ReleaseList } from "/Users/jaimiehart/workspace/client-capstone/wax/src/components/search";
 

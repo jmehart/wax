@@ -5,8 +5,8 @@ import { NavBar } from "./nav/NavBar";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 import "./Wax.css";
-import { Artist } from "/Users/jaimiehart/workspace/client-capstone/wax/src/routes/Artist/index.js";
-import { Search } from "/Users/jaimiehart/workspace/client-capstone/wax/src/routes/Search/index.js";
+import { Artist } from "./routes/Artist/index.js";
+import { Search } from "./routes/Search/index.js";
 
 
 

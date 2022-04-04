@@ -286,6 +286,7 @@ export const RecordForm = () => {
                         <label className="radioLabel" htmlFor="addCollection">Add to Collection</label>
                         <input type="radio"
                             name="addRadio"
+                            value="collection"
                             onChange={
                                 (evt) => {
                                     updateDestination("collection")

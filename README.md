@@ -15,7 +15,7 @@ This application will solve an issue for record collectors when shopping for rec
 - the Home page. Minimal and includes a Navbar with a logo, Crate page button, Collection page button, Home/Search 
 Page button and a Logout button. The body of the Search page has a search bar to find records based on album name or catalog number. Searching shows all matching results from the discogs database and clicking a result links to the Record List page for more info, and there you can add to crate or collection. The search page also has a form field to manually add a record to your crate or collection.
 ### Record List page 
-- renders when an album is selected on the search page, finds matching records, and lists them with:
+- Renders when an album is selected on the search page, finds matching records, and lists them with:
     - Album name 
     - Artist name
     - Catalog number
@@ -25,13 +25,13 @@ Page button and a Logout button. The body of the Search page has a search bar to
     - Label
     - Genre
     - Style
-            - Average rating
-- Lowest selling price/value
-- Add to crate or collection buttons
+    - Average rating
+    - Lowest selling price/value
+    - Add to crate or collection buttons
 ### Crate 
-- page that displays records that a user added to Crate and is used to keep track of records that you are interested in buying and adding to your collection. The Crate displays a list of album covers that display more album info (similar to the Record List page) when they are clicked. The Crate has two buttons at the bottom of each record element: “Add to Collection” for the user to click when they’ve bought the record, or “Remove from Crate” if the user decided that they no longer want the record.
+- Page that displays records that a user added to Crate and is used to keep track of records that you are interested in buying and adding to your collection. The Crate displays a list of album covers that display more album info (similar to the Record List page) when they are clicked. The Crate has two buttons at the bottom of each record element: “Add to Collection” for the user to click when they’ve bought the record, or “Remove from Crate” if the user decided that they no longer want the record.
 ### Collection 
-- page that displays records that a user added to Collection and is used to keep track of records that you own. The Collection displays a list of album covers that display more album info when they are clicked. An album will also display a “Remove From Collection” button in case the user sold, traded, or for whatever reason doesn’t own that record anymore. At the top of the Collection page you'll find the total minimum value of your record collection; a formula that finds the sum of the "value" key property values in the records array.
+- Page that displays records that a user added to Collection and is used to keep track of records that you own. The Collection displays a list of album covers that display more album info when they are clicked. An album will also display a “Remove From Collection” button in case the user sold, traded, or for whatever reason doesn’t own that record anymore. At the top of the Collection page you'll find the total minimum value of your record collection; a formula that finds the sum of the "value" key property values in the records array.
 
 ## DEVELOPED WITH:
 - [React](https://facebook.github.io/react/)

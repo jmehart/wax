@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import { SearchInput, ArtistList } from "/Users/jaimiehart/workspace/client-capstone/wax/src/components/search";
+import { SearchInput, ArtistList } from "/Users/jaimiehart/workspace/client-capstone/wax/src/components/search/index.js";
 
-import { submitSearch } from "/Users/jaimiehart/workspace/client-capstone/wax/src/API/submitSearch.js";
+import { submitSearch } from "/Users/jaimiehart/workspace/client-capstone/wax/src/API/index.js";
 
 import styles from "./search.module.css";
 

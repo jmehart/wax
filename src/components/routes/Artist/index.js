@@ -3,7 +3,8 @@ import { parse, stringify } from "qs";
 
 import { getArtistReleases } from "/Users/jaimiehart/workspace/client-capstone/wax/src/API/getArtistReleases.js";
 
-import { Button, ReleaseList } from "/Users/jaimiehart/workspace/client-capstone/wax/src/components/search";
+import { Button } from "/Users/jaimiehart/workspace/client-capstone/wax/src/components/search/Button/index.js";
+import { ReleaseList } from "/Users/jaimiehart/workspace/client-capstone/wax/src/components/search/ReleaseList/index.js";
 
 import styles from "./artist.module.css";
 

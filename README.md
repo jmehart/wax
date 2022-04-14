@@ -39,6 +39,10 @@ Page button and a Logout button. The body of the Search page has a search bar to
     - Requires an API key and secret from [Discogs](https://www.discogs.com/developers/)
     - [Sample json database](https://github.com/jmehart/wax-api)
 
+## TO USE:
+- Currently you can acces and clone the [localHostBranch](https://github.com/jmehart/wax/tree/localHostBranch) and use the [sample json database](https://github.com/jmehart/wax-api)
+- Deployed app coming soon
+
 <hr>
 
 

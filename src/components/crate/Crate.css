@@ -9,8 +9,7 @@
     padding: 20px;
     display: grid;
     gap: 50px;
-    background-image: url("/Users/jaimiehart/workspace/client-capstone/wax/src/components/images/crateBackground.jpg") ;
-    padding: 10px;
+    background-image: url("/Users/jaimiehart/workspace/wax-deploy/wax/src/components/images/crateBackground.jpg") ;
     display: flex;
     justify-content: center;
 }

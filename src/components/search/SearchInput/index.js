@@ -8,7 +8,7 @@ export const SearchInput = props => {
     return (
         <div className={styles.container}>
         
-                <h2>Search</h2>
+                <h2 className={styles.searchHeader}>Search</h2>
       
             <br></br>
 

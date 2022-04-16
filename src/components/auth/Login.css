@@ -47,8 +47,9 @@ fieldset {
 
 .container--login {
     text-align: center;
-    padding-top: 200px;
-    padding-left: 125px;
+    padding-top: 100px;
+    padding-left: 50px;
+    
 }
 
 .form--login {

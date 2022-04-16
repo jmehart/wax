@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 
-import { SearchInput, ArtistList } from "/Users/jaimiehart/workspace/wax-deploy/wax/src/components/search/index.js";
+import { ArtistList } from "../../search/ArtistList";
+import { SearchInput } from "../../search/SearchInput";
 
-import { submitSearch } from "/Users/jaimiehart/workspace/wax-deploy/wax/src/API/index.js";
+import { submitSearch } from "../../../API/submitSearch";
 
 import styles from "./search.module.css";
 

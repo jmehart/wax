@@ -24,7 +24,7 @@ export const ReleaseList = ({ release }) => {
       for (const video of release.videos) {
         const file = video.uri
         let [a, filename] = file.split("watch?v=")
-        copy.push("http://www.youtube.com/embed/" + filename)
+        copy.push("https://www.youtube.com/embed/" + filename)
 
       }
       setVideoLinks(copy)
@@ -58,11 +58,14 @@ export const ReleaseList = ({ release }) => {
 
   const [destination, updateDestination] = useState("")
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   const history = useHistory()
   //EVENT HANDLER TO SAVE THE FORM VALUES AS NEW OBJECT
   const saveRecordObj = () => {
-
+    
 
     //create new object based on form input
     const newRecord = {
@@ -100,11 +103,11 @@ export const ReleaseList = ({ release }) => {
       .then(() => {
         //conditional to update destination state variable to route to certain pages
         if (destination === "crate") {
-          history.go("/")
+          refreshPage()
           return fetch("https://wax-api-bcskd.ondigitalocean.app/crate", fetchCrateCollect)
             .then(response => response.json())
         } else if (destination === "collection") {
-          history.go("/")
+          refreshPage()
           return fetch("https://wax-api-bcskd.ondigitalocean.app/collection", fetchCrateCollect)
             .then(response => response.json())
         }

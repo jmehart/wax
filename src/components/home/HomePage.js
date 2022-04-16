@@ -2,8 +2,8 @@ import React from "react"
 import { RecordForm } from "../records/RecordForm"
 import "./HomePage.css"
 import { Route, Redirect, Switch } from "react-router-dom";
-import { Artist } from "/Users/jaimiehart/workspace/wax-deploy/wax/src/components/routes/Artist/index.js";
-import { Search } from "/Users/jaimiehart/workspace/wax-deploy/wax/src/components/routes/Search/index.js";
+import { Artist } from "../routes/Artist";
+import { Search } from "../routes/Search";
 
 /*
 THIS MODULE IS RESPONSIBLE FOR RENDERING THE HOME PAGE

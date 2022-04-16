@@ -2,7 +2,7 @@ import React from "react"
 //import thirds party dom "link" that allows us to do routing
 import { Link } from "react-router-dom"
 import "./NavBar.css"
-import "/Users/jaimiehart/workspace/wax-deploy/wax/src/components/images/69524.png"
+import "../images/69524.png"
 
 //Display navbar with href links to files
 //at attribute "to=" it will render a hyperlink in your DOM, and when clicked, it will change the URL in the browser to the value of the to attribute

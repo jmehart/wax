@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { parse, stringify } from "qs";
 
-import { getArtistReleases } from "/Users/jaimiehart/workspace/wax-deploy/wax/src/API/getArtistReleases.js";
+import { getArtistReleases } from "../../../API";
 
-import { Button } from "/Users/jaimiehart/workspace/wax-deploy/wax/src/components/search/Button/index.js";
-import { ReleaseList } from "/Users/jaimiehart/workspace/wax-deploy/wax/src/components/search/ReleaseList/index.js";
+import { Button } from "../../search/Button";
+import { ReleaseList } from "../../search/ReleaseList";
 
 import styles from "./artist.module.css";
 

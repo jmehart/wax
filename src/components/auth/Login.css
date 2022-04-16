@@ -56,7 +56,7 @@ fieldset {
     z-index: 1;
     min-height: 25rem;
     min-width: 50rem;
-    background-image: url("/Users/jaimiehart/workspace/wax-deploy/wax/src/components/images/illustration-what-made-ink-pencil-paper-then-was-digitalized-vinyl-player-drawing-engraving-line-art-vector-147936347.jpeg");
+    background-image: url("../images/illustration-what-made-ink-pencil-paper-then-was-digitalized-vinyl-player-drawing-engraving-line-art-vector-147936347.jpeg");
     background-repeat: no-repeat;
     background-size: 300px;
     background-position: 30em;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { parse, stringify } from "qs";
 
-import { getArtistReleases } from "../../../API";
+import { getArtistReleases } from "../../../API/getArtistReleases";
 
 import { Button } from "../../search/Button";
 import { ReleaseList } from "../../search/ReleaseList";

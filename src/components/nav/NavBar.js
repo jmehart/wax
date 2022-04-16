@@ -18,7 +18,7 @@ export const NavBar = (props) => {
 
             <label htmlFor="slide-item-1">
                 <Link id="nav-item-1" className="navLink" to="/" style={{ textDecoration: 'none' }}>
-                    <p className="icon"><img className="homeIcon" alt="home icon" src={require("/Users/jaimiehart/workspace/wax-deploy/wax/src/components/images/69524.png")} /></p>
+                    <p className="icon"><img className="homeIcon" alt="home icon" src={require("../images/69524.png")} /></p>
                     <span>Home</span>
                 </Link>
             </label>
@@ -50,7 +50,7 @@ export const NavBar = (props) => {
                     onClick={() => {
                         localStorage.removeItem("wax_user")
                     }}>
-                    <p className="icon"><img className="logoutIcon" alt="logout icon" src={require("/Users/jaimiehart/workspace/wax-deploy/wax/src/components/images/1200px-OOjs_UI_icon_logOut-ltr.svg.png")} /></p>
+                    <p className="icon"><img className="logoutIcon" alt="logout icon" src={require("../images/1200px-OOjs_UI_icon_logOut-ltr.svg.png")} /></p>
                     <span>Logout</span>
                 </Link>
             </label>

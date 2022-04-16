@@ -28,7 +28,10 @@ export const Wax = () => (
                             <ApplicationViews />
                                 
                                 
-
+                            <Switch>
+                                    <Route path="/artist" component={Artist} />
+                                    <Route path="/" component={Search} />
+                                </Switch>
                          
                         </>
                     );

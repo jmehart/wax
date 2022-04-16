@@ -3,7 +3,7 @@
 .container {
   text-align: center;
 
-  background-image: url("/Users/jaimiehart/workspace/wax-deploy/wax/src/components/images/homeBackground.jpg");
+  background-image: url("../../images/homeBackground.jpg");
 
   background-size: contain;
   background-position: center;

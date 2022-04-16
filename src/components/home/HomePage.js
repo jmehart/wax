@@ -18,10 +18,7 @@ export const HomePage = () => {
     return (
         <>
         <h1 className="waxTitle">WAX</h1>
-        <Switch>
-                                    <Route path="/artist" component={Artist} />
-                                    <Route path="/" component={Search} />
-                                </Switch>
+
         
         </>
     )

@@ -1,7 +1,7 @@
 .recordFormParent {
     display: flex;
     justify-content: center;
-    background-image: url("/Users/jaimiehart/workspace/wax-deploy/wax/src/components/images/homeBackground.jpg");
+    background-image: url("../images/homeBackground.jpg");
     background-size: cover;
 	max-width: 1200px; 
 	margin: 0 auto !important; 
@@ -37,7 +37,7 @@
 }
 
 .Record {
-    background-image: url("/Users/jaimiehart/workspace/wax-deploy/wax/src/components/images/istockphoto-503242322-612x612 copy.jpg");
+    background-image: url("../images/istockphoto-503242322-612x612 copy.jpg");
     background-repeat: no-repeat;
     background-size: 800px;
     background-position: center top;

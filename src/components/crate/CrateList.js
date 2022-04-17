@@ -81,6 +81,7 @@ export const CrateList = () => {
                     <div className="search-form-group">
                         <h3>Search Your Crate</h3>
                         <input
+                            autoFocus
                             type="text"
                             className="search-control"
                             placeholder="Artist, album, year, format..."

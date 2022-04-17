@@ -1,5 +1,9 @@
 # WAX
 
+## TO USE:
+- Deployed app: [https://wax-b84uf.ondigitalocean.app/] 
+- Original version that includes a form uses localhost and is not deployed. To use that version, clone [localHostBranch](https://github.com/jmehart/wax/tree/localHostBranch) and use the [sample json database](https://github.com/jmehart/wax-api)
+
 ## INTRO & PURPOSE
 
 The main purpose of the Wax app is to offer the ability to search the Discogs database to get extensive information about records, quickly and seamlessly. Users will additionally be able to keep track of records that they want and records that they own.
@@ -38,10 +42,6 @@ Page button and a Logout button. The body of the Search page has a search bar to
 - RESTful API and Discogs API
     - Requires an API key and secret from [Discogs](https://www.discogs.com/developers/)
     - [Sample json database](https://github.com/jmehart/wax-api)
-
-## TO USE:
-- Currently you can access and clone the [localHostBranch](https://github.com/jmehart/wax/tree/localHostBranch) and use the [sample json database](https://github.com/jmehart/wax-api)
-- Deployed app coming soon
 
 <hr>
 
